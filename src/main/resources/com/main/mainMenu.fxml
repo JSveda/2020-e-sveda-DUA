@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.mainMenuController">
+   <children>
+      <HBox minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: rgb(11, 20, 37);" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox alignment="CENTER_RIGHT" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="250.0" spacing="5.0" style="-fx-background-color: rgb(25119157251,191,57); -fx-background-radius: 30px;" stylesheets="file:/Users/jakub.sveda/Documents/IdeaProjects/DUAlgorithms/src/main/java/com/main/css/TitleMainMenu.css" HBox.hgrow="NEVER">
+               <children>
+                  <ImageView fx:id="logoImg" fitHeight="101.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true" translateX="-50.0" translateY="-20.0">
+                     <image>
+                        <Image url="file:/Users/jakub.sveda/Documents/IdeaProjects/DUAlgorithms/src/img/logoDUAlg.png" />
+                     </image>
+                     <effect>
+                        <DropShadow height="20.0" offsetX="-3.0" offsetY="3.0" radius="9.5" spread="0.03" width="20.0">
+                           <color>
+                              <Color red="0.04313725605607033" green="0.0784313753247261" blue="0.14509804546833038" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </ImageView>
+                  <Label fx:id="algorithmBasics" onMouseClicked="#goToAlgorithmBasics" styleClass="title" text="ZÁKLADY ALGORITMŮ" textAlignment="JUSTIFY" />
+                  <Label fx:id="simpleAlgorithms" onMouseClicked="#gotToSimpleAlgorithms" styleClass="title" text="JEDNODUCHÉ ALGORITMY" textAlignment="JUSTIFY" />
+                  <Label fx:id="eukleidAlgorithm" onMouseClicked="#goToEukleidAlgorithm" styleClass="title" text="EUKLEIDŮV ALGORITMUS" textAlignment="JUSTIFY" />
+                  <Label fx:id="primeNumbers" onMouseClicked="#goToPrimeNumbers" styleClass="title" text="PRVOČÍSELNOST" textAlignment="JUSTIFY" />
+                  <Label fx:id="arraySearching" onMouseClicked="#goToArraySearching" styleClass="title" text="VYHLEDÁVÁNÍ V POLI" textAlignment="JUSTIFY" />
+                  <Label fx:id="inputDataProcessing" onMouseClicked="#goToInputDataProcessing" styleClass="title" text="ZPRACOVÁNÍ DAT ZE VSTUPU" textAlignment="JUSTIFY" />
+                  <Label fx:id="arrayDataProcessing" onMouseClicked="#goToArrayDataProcessing" styleClass="title" text="ZPRACOVÁNÍ DAT V POLI" textAlignment="JUSTIFY" />
+                  <Label fx:id="arraySorting" onMouseClicked="#goToArraySorting" styleClass="title" text="ŘAZENÍ DAT V POLI" textAlignment="JUSTIFY" />
+                  <Label fx:id="matrixAlgorithms" onMouseClicked="#goToMatrixAlgorithms" styleClass="title" text="MATICE" textAlignment="JUSTIFY" />
+                  <Label fx:id="calendarAlgorithms" onMouseClicked="#goToCalendarAlgorithms" styleClass="title" text="KALENDÁŘ" textAlignment="JUSTIFY" />
+                  <Label fx:id="bigIntegers" onMouseClicked="#goToBigIntegers" styleClass="title" text="DLOUHÁ ČÍSLA" textAlignment="JUSTIFY" />
+                  <Label fx:id="polynomialAlgorithms" onMouseClicked="#goToPolynomialAlgorithms" styleClass="title" text="POLYNOMY" textAlignment="JUSTIFY" />
+                  <Label fx:id="abstractDataType" onMouseClicked="#goToAbstractDataTypes" styleClass="title" text="ABSTRAKTNÍ DATOVÉ TYPY" textAlignment="JUSTIFY" />
+                  <Label fx:id="binarySearchingTree" alignment="TOP_RIGHT" onMouseClicked="#goToBinarySearchingTree" prefHeight="20.0" prefWidth="320.0" styleClass="title" text="BINÁRNÍ VYHLEDÁVACÍ STROM" textAlignment="JUSTIFY" />
+                  <Label fx:id="directKeyIndexing" minWidth="-Infinity" onMouseClicked="#goToDirectKeyIndexing" prefHeight="20.0" prefWidth="179.0" styleClass="title" text="PŘÍMÁ INDEXACE KLÍČE" textAlignment="JUSTIFY" translateX="11.0" />
+               </children>
+               <HBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="20.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+               <effect>
+                  <DropShadow height="20.0" offsetX="3.0" offsetY="3.0" radius="9.5" spread="0.5" width="20.0">
+                     <color>
+                        <Color red="0.4313725531101227" green="0.3137255012989044" blue="0.11764705926179886" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </VBox>
+            <ListView fx:id="pathList" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefWidth="470.0" style="-fx-background-color: rgb(20, 65, 210); -fx-background-radius: 30px;" stylesheets="file:/Users/jakub.sveda/Documents/IdeaProjects/DUAlgorithms/src/main/java/com/main/css/ListViewMainMenu.css" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="60.0" />
+               </HBox.margin>
+               <effect>
+                  <DropShadow height="20.0" offsetX="-3.0" offsetY="3.0" radius="9.5" spread="0.5" width="20.0">
+                     <color>
+                        <Color red="0.1381578892469406" green="0.19243420660495758" blue="0.3552631437778473" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </ListView>
+         </children>
+      </HBox>
+   </children>
+</VBox>

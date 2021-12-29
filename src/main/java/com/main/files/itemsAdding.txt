@@ -1,0 +1,77 @@
+ArrayList<String> items = new ArrayList<>();
+        items.add("ZÁKLADY ALGORITMŮ");
+        items.add("Efektivita a složitost");
+        items.add("Asymptotická časová složitost");
+        items.add("JEDNODUCHÉ ALGORITMY");
+        items.add("Dělitelnost");
+        items.add("Práce s polem");
+        items.add("Intervaly a velikosti proměnných");
+        items.add("Modulo operace");
+        items.add("EUKLEIDŮV ALGORITMUS");
+        items.add("Největší společný dělitel");
+        items.add("Nejmenší společný násobek");
+        items.add("PRVOČÍSELNOST");
+        items.add("Test prvočíselnosti");
+        items.add("Eratostedovo síto");
+        items.add("Prvočíselný rozklad");
+        items.add("VYHLEDÁVÁNÍ V POLI");
+        items.add("Sekvenční vyhledávání");
+        items.add("Sekvenční vyhledávání se zarážkou");
+        items.add("Binární vyhledávání");
+        items.add("ZPRACOVÁNÍ DAT ZE VSTUPU");
+        items.add("Příklady algoritmů");
+        items.add("ZPRACOVÁNÍ DAT V POLI");
+        items.add("Cyklický posun prvků v poli");
+        items.add("Srovnání čísel do kategorií");
+        items.add("Počet různých hodnot v poli");
+        items.add("ŘAZENÍ DAT V POLI");
+        items.add("Select sort");
+        items.add("Insert sort");
+        items.add("Bubble sort");
+        items.add("Merge sort");
+        items.add("Vnější třídění");
+        items.add("MATICE");
+        items.add("Příklady algoritmů");
+        items.add("Pojmy");
+        items.add("KALENDÁŘ");
+        items.add("Přestupnost roku");
+        items.add("Příklady algoritmů");
+        items.add("DLOUHÁ ČÍSLA");
+        items.add("Příklady algoritmů");
+        items.add("POLYNOMY");
+        items.add("Hornerovo schéma");
+        items.add("Převody číselných soustav");
+        items.add("ABSTRAKTNÍ DATOVÉ TYPY");
+        items.add("Zásobník");
+        items.add("Fronta");
+        items.add("Halda");
+        items.add("BINÁRNÍ VYHLEDÁVACÍ STROM");
+        items.add("Vyvažování BVS");
+        items.add("PŘÍMÁ INDEXACE KLÍČE");
+        items.add("Hešování");
+
+
+        FileOutputStream f = null;
+                ObjectOutputStream o = null;
+                try {
+                    f = new FileOutputStream("/Users/jakub.sveda/Documents/IdeaProjects/DUAlgorithms/src/main/java/com/main/files/listOfHrefs.dat");
+                    o = new ObjectOutputStream(f);
+                    o.writeObject(items);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } finally {
+                    if (f != null) {
+                        try {
+                            f.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    if (o != null) {
+                        try {
+                            o.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }

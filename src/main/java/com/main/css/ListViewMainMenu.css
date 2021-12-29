@@ -1,0 +1,41 @@
+.list-view .list-cell {
+    -fx-background-color: rgb(20, 65, 210);
+    -fx-text-fill: rgb(251, 191, 57);
+    -fx-font-size: 15px;
+}
+
+.list-view .list-cell:hover {
+    -fx-background-color: rgb(251, 191, 57);
+    -fx-background-radius: 30px;
+    -fx-text-fill: rgb(20, 65, 210);
+    -fx-font-size: 20px;
+    -fx-background-insets: 3px;
+}
+
+
+.list-view {
+    -fx-padding: 20px;
+}
+
+/*
+----------------------------------------------------------------------------------------------------------
+Scrollbar design: https://stackoverflow.com/questions/60101703/how-do-you-css-style-a-scroll-bar-in-javafx
+ */
+.list-view .scroll-bar:vertical {
+    -fx-background-color: rgb(11, 20, 37);
+    -fx-background-radius: 30px;
+}
+
+.list-view .increment-button ,.list-view .decrement-button {
+    -fx-background-color:transparent;
+    -fx-border-color:transparent;
+}
+
+.list-view .scroll-bar:vertical .thumb {
+    -fx-background-color: rgb(251, 191, 57);
+    -fx-background-insets: 5, 5, 5;
+    -fx-background-radius: 30px;
+}
+/*
+----------------------------------------------------------------------------------------------------------
+ */

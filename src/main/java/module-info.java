@@ -10,6 +10,8 @@ module com.example.dualgorithms {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
 
-    opens com.mainMenu to javafx.fxml;
-    exports com.mainMenu;
+    opens com.main to javafx.fxml;
+    exports com.main;
+    exports com.main.tools;
+    opens com.main.tools to javafx.fxml;
 }

@@ -1,4 +1,4 @@
-package com.mainMenu;
+package com.main;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-public class MainStageController {
+public class StageController {
     private Stage currentStage;
     private Scene currentScene;
     private Parent currentRoot;

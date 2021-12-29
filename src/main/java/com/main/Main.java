@@ -1,4 +1,4 @@
-package com.mainMenu;
+package com.main;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +12,9 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("mainMenu.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 500);
-        stage.setTitle("Hello!");
+        stage.setTitle("Digitální učebnice algoritmů");
+        stage.setMinWidth(800);
+        stage.setMinHeight(620);
         stage.setScene(scene);
         stage.show();
     }
