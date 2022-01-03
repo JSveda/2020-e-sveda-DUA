@@ -1,0 +1,22 @@
+.button {
+    -fx-background-color: rgb(20, 65, 210);
+    -fx-text-fill: rgb(251, 191, 57);
+    -fx-background-radius: 30px;
+    -fx-font-size: 18px;
+}
+
+.web-view .scroll-bar:vertical {
+    -fx-background-color: rgb(11, 20, 37);
+    -fx-background-radius: 30px;
+}
+
+.web-view .increment-button ,.web-view .decrement-button {
+    -fx-background-color:transparent;
+    -fx-border-color:transparent;
+}
+
+.web-view .scroll-bar:vertical .thumb {
+    -fx-background-color: rgb(251, 191, 57);
+    -fx-background-insets: 5, 5, 5;
+    -fx-background-radius: 30px;
+}

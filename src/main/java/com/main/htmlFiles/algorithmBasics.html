@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="cz">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            --darkBlue: rgb(11, 20, 37);
+            --lightBlue: rgb(20, 65, 210);
+            --yellow: rgb(251, 191, 57);
+        }
+
+        body {
+            background-color: var(--darkBlue);
+            color: var(--yellow);
+        }
+
+        h1 {
+            background: var(--lightBlue);
+            border: solid 1px var(--lightBlue);
+            border-radius: 30px;
+            text-align: center;
+            padding: 10px;
+            margin: 5px 15px 5px 5px;
+        }
+
+        #mainParagraph {
+            padding: 10px 30px;
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>ZÁKLADY ALGORITMŮ</h1>
+    </div>
+    <div id="mainParagraph">
+        <h2>Algoritmus</h2>
+        <p>
+            Je blok kódu, který má vykonat nějakou činnost v co nejlepším čase a s co nejmenšími paměťovými nároky. Ve většině případů je algoritmus reprezentován metodou, která má danou funkci vykonávat.
+        </p>
+
+        <h2>Efektivita algoritmu</h2>
+        <p>
+            Je hodnocení algoritmu podle toho, jak moc velké nároky klade algoritmus na paměť, pak ji nazýváme prostorová efektivita, nebo jak dlouho algoritmus probíhá, pak ji nazýváme časovou efektivitou.
+        </p>
+
+        <h2>Složitost algoritmu</h2>
+        <p>
+            Je údaj, který vyjadřuje efektivitu algoritmu oproti ostatním algoritmů. Závisí na velikosti instance problému, čímž nazýváme velikost a počet vstupních dat. Tyto údaje vyjadřujeme počtem operací.
+        </p>
+        <p>
+            Určujeme takzvanou asymptotickou časovou složitost, což je zjednodušeně vyjádřeno jako velmi nepřesně zaokrouhlený počet operací. Například algoritmus, který vykoná 3n<sup>2</sup>+4n+3 operací, označíme za algoritmus s asymptotickou časovou složitostí O(n<sup>2</sup>).
+        </p>
+        <p>
+            Z hlediska asymptotické časové složitosti rozlišujeme dva základní typy algoritmů:<br/>
+            1. polynomiální algoritmy - O(1), O(n), O(n<sup>2</sup>), O(n<sup>3</sup>), ...<br/>
+            2. exponenciální algoritmy - O(2<sup>n</sup>), O(3<sup>n</sup>), ...
+        </p>
+        <p>
+            pozn. <i>O(1) znamená, že rychlost algoritmu je nezávislá na počtu zpracovávaných dat.</i>
+        </p>
+    </div>
+  </body>
+</html>

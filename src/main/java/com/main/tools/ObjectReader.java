@@ -1,28 +1,29 @@
 package com.main.tools;
 
+import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 public class ObjectReader {
-    private final ArrayList<String> arrayList;
+    private final LinkedHashMap<String, String> linkedHashMap;
 
     public ObjectReader(String path) {
-        this.arrayList = readArrayList(path);
+        this.linkedHashMap = readLinkedHashMap(path);
     }
 
-    public ArrayList<String> getArrayList() {
-        return arrayList;
+    public LinkedHashMap<String, String> getLinkedHashMap() {
+        return linkedHashMap;
     }
 
-    private ArrayList<String> readArrayList(String path) {
+    private LinkedHashMap<String, String> readLinkedHashMap(String path) {
         FileInputStream fis = null;
         ObjectInputStream ois = null;
         try {
             fis = new FileInputStream(path);
             ois = new ObjectInputStream(fis);
-            return (ArrayList<String>) ois.readObject();
+            return ((LinkedHashMap<String, String>) ois.readObject());
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         } finally {
