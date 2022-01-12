@@ -64,11 +64,33 @@
         <h3><u>Nalezení čísla v poli</u></h3>
 
         <p>
-            První příkladem na algorimy pro práci s polem může být například takovéto zadání. Nalezněte a vraťte index hledaného čísla v zadaném poli celých čísel. <i>Tzn. pokud bedeme mít zadané pole <b>[1 ,2 , 5, 6, 8, 10, -2, 4, 1]</b> a budeme hledat číslo <b>5</b>, program vrátí <b>2</b></i>
+            První příkladem na algorimy pro práci s polem může být například takovéto zadání. Nalezněte a vraťte index hledaného čísla v zadaném poli celých čísel. Pokud se v poli hledané číslo nevyskytuje, program vrátí -1. <i>Tzn. pokud bedeme mít zadané pole <b>[1 ,2 , 5, 6, 8, 10, -2, 4, 1]</b> a budeme hledat číslo <b>5</b>, program vrátí <b>2</b></i>
         </p>
 
         <p>Zde je první zcela primitivní řešení tohoto problému:</p>
 
+        <img src="/Users/jakub.sveda/Documents/IdeaProjects/DUAlgorithms/src/img/najdiVPoli.png" alt="algoritmus najdi v poli" width="auto" height="400"/>
+
+        <p>
+            Takovéto řešení je zcela funkční, přesto nefektivní. Když totiž budeme mít pole dělky např. 1000 a hledané číslu bude hned na prvním indexu, pak program bude procházet i všechna ostatní čísla, přestože jsme již našli výsledek.
+        </p>
+
+        <p>
+            Lepším řešením bude toto:
+        </p>
+
+        <img src="/Users/jakub.sveda/Documents/IdeaProjects/DUAlgorithms/src/img/najdiVPoliLepe.png" alt="algoritmus najdi v poli" width="auto" height="400"/>
+
+        <h2><b>VELIKOSTI PROMĚNNÝCH</b></h2>
+        <h3><u>Vrácení největšího čísla</u></h3>
+
+        <p>
+            Nyní napíšeme program, který bude mít na vstupu 4 celočíselné proměnné a vrátí největší v nich. <i>Tzn. pokud budou na vstupu čísla <b>3</b>, <b>7</b>, <b>7</b>, <b>10</b>, pak program vrátí <b>7</b></i>
+        </p>
+
+        <img src="/Users/jakub.sveda/Documents/IdeaProjects/DUAlgorithms/src/img/nejvetsiCislo.png" alt="algoritmus nalezení největšího čísla" width="auto" height="400"/>
+
+        <img src="/Users/jakub.sveda/Documents/IdeaProjects/DUAlgorithms/src/img/nejvetsiCisloLepe.png" alt="algoritmus nalezení největšího čísla" width="auto" height="400"/>
 
     </div>
 </body>
