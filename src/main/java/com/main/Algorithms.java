@@ -14,7 +14,7 @@ public class Algorithms {
      */
     public static void main(String[] args) {
         //System.out.println(isDelitelny(20, 3));
-        printDelitelnaCislaZIntervalu(20, 100);
+        printNasobkyCislaZIntervalu(20, 100);
         //printDvojiceScitancu(6);
         //System.out.println(isInArray(new int[] {1, 2, 3, 4, 5, 6}, 3));
         //System.out.println(vypocetPolynomu(1, new int[] {0, -2, 6, -8, 0, 0, 5}));
@@ -128,11 +128,30 @@ public class Algorithms {
      * @param delitel        the delitel
      * @param konecIntervalu the konec intervalu
      */
-    public static void printDelitelnaCislaZIntervalu(int delitel, int konecIntervalu) {
+    public static void printNasobkyCislaZIntervalu(int delitel, int konecIntervalu) {
         int pocitadlo = delitel;
         while (pocitadlo <= konecIntervalu) {
             System.out.println(pocitadlo);
             pocitadlo += delitel;
+        }
+    }
+
+    int najdiVPoli(int hledaneCislo, int[] pole) {
+        int index = -1;
+        for (int i = 0; i < pole.length; i++) {
+            if (i == hledaneCislo) {
+                index = i;
+            }
+        }
+
+        return index;
+    }
+
+    void printNasobkyCislaZIntervaluxx(int delitel, int konecIntervalu) {
+        for (int i = 0; i <= konecIntervalu; i++) {
+            if (i % delitel == 0) {
+                System.out.println(i);
+            }
         }
     }
 
