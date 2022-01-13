@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 
-<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.mainMenuController">
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.MainMenuController">
    <children>
       <HBox minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: rgb(11, 20, 37);" VBox.vgrow="ALWAYS">
          <children>

@@ -23,15 +23,24 @@ import java.util.LinkedHashMap;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class mainMenuController implements Initializable {
+public class MainMenuController implements Initializable {
 
     // Object for reading list of elements of ListView in Java FXML
     private ObjectReader objectReader;
+    private static String srollID;
 
     // Java FX --- changing Stage, Scene, Parent
     private Stage currentStage;
     private Scene currentScene;
     private Parent currentRoot;
+
+    public static String getSrollID() {
+        return srollID;
+    }
+
+    public static void setSrollID(String srollID) {
+        MainMenuController.srollID = srollID;
+    }
 
     @FXML
     private Label arrayDataProcessing;
@@ -154,11 +163,6 @@ public class mainMenuController implements Initializable {
 
         observableList.addAll(items.keySet());
         pathList.setItems(observableList);
-        try {
-            //items.addAll(Objects.requireNonNull(objectReader.getArrayList()));
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        }
     }
 
 
@@ -240,9 +244,10 @@ public class mainMenuController implements Initializable {
     @FXML
     public void goToPage(Event event) {
         String selectedItem = pathList.getSelectionModel().getSelectedItem();
+        MainMenuController.setSrollID(objectReader.getLinkedHashMap().get(selectedItem));
         System.out.println("-------------------------------------------------");
-        System.out.println("clicked on: " + selectedItem);
-        System.out.println("destination: " + objectReader.getLinkedHashMap().get(selectedItem));
+        System.out.println("clicked on: " + selectedItem );
+        System.out.println("destination: " + getSrollID() );
         System.out.println("-------------------------------------------------");
 
         changeScene(event, selectedItem);

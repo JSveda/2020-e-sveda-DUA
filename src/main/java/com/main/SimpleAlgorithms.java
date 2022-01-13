@@ -34,6 +34,7 @@ public class SimpleAlgorithms implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         File htmlFile = new File("/Users/jakub.sveda/Documents/IdeaProjects/DUAlgorithms/src/main/java/com/main/htmlFiles/simpleAlgorithms.html");
         webView.getEngine().load(htmlFile.toURI().toString());
+        webView.getEngine().executeScript("window.location.hash='cara'");
     }
 
     @javafx.fxml.FXML
