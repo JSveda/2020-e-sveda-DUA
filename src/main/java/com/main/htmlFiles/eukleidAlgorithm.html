@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cz">
 <head>
     <meta charset="UTF-8">
     <style>
@@ -31,22 +31,128 @@
     </style>
 </head>
 <body>
-    <div>
-        <h1>EUKLEIDŮV ALGORITMUS</h1>
-    </div>
-
+<div>
+    <h1>EUKLEIDŮV ALGORITMUS</h1>
+</div>
+<div id="mainParagraph">
     <p>
-        Tento algoritmus pochází původně ze starověkého Řecka od tehdejšího filozofa Eukleida. Přestože tento algoritmus uvedl ve svém díle Základy, není dodnes zcela jasné, kde tento algoritmus vynalezl. Zajímavý je tím, že je zřejmě nejstarším netriviálním algoritmem v historii lidstva.
+        Tento algoritmus pochází původně ze starověkého Řecka od tehdejšího filozofa Eukleida. Přestože tento algoritmus
+        uvedl ve svém díle Základy, není dodnes zcela jasné, kdo tento algoritmus vynalezl. Zajímavý je tím, že je
+        zřejmě nejstarším netriviálním algoritmem v historii lidstva.
     </p>
 
     <p>
-        Algoritmus je určený pro nalezení největšího společného dělitele <b>(NSD)</b> dvou přirozených čísel. Dále se dá také využít pro nalezení nejmenšího společného násobku <b>(nsn)</b> dvou přirozených čísel.
+        Algoritmus je určený pro nalezení největšího společného dělitele <b>(NSD)</b> dvou přirozených čísel. Dále se dá
+        také využít pro nalezení nejmenšího společného násobku <b>(nsn)</b> dvou přirozených čísel.
+    </p>
+
+    <hr>
+    <h2><b>NEJVĚTŠÍ SPOLEČNÝ DĚLITEL (NSD)</b></h2>
+    <p>
+        Jako první si ukážeme jak lze řešit první z těchto problémů, tedy NSD. Napíšeme tak program, jež bude procházet
+        čísla od největšího z dvou zadaných čísel, dokud nebudou obě dělitelná bezezbytku. Pak toto číslo vrátí. <i>Např.
+        když budou zadána <b>čísla 20 a 5</b> program vrátí <b>číslo 5</b>, což je největším společným dělitelem obou
+        čísel.</i>
+    </p>
+
+    <img src="/Users/jakub.sveda/Documents/IdeaProjects/DUAlgorithms/src/img/NSD.png" alt="algoritmus NSD" width="auto"
+         height="325"/>
+
+    <p>
+        Jak to již v programování bývá toto je sice funkční a správné řešení, přesto dost neefektivní. Stejný problém
+        totiž může vyřešit dosti lépe právě za využití <b>Eukleidova algoritmu</b>, a proto si ho nyní ukážeme:
+    </p>
+
+    <img src="/Users/jakub.sveda/Documents/IdeaProjects/DUAlgorithms/src/img/eukleiduvAlgoritmus.png"
+         alt="Eukleidův algoritmus" width="auto" height="400"/>
+
+    <p>
+        Můžeme si všimnout, že algoritmus pracuje s původními čísli a na konci programu nejsou tato čísla zachována.
+        Algoritmus
+        funguje tak, že dokud se původní proměnné nerovnají, odčítá menší hodnotu od větší. Jeho práci si můžeme
+        představit následovně:
+    </p>
+    <ol>
+        <li>
+            Na vstupu máme <b>dvě čísla - 120 a 75</b>
+        </li>
+        <li>
+            V prvním cyklu je jasné, že se čísla nerovnají a tak vstupuje program do smyčky. Tedy vezme větší číslo
+            <b>(120)</b> a od něj odečte menší <b>(75)</b>. Na konci prvního cyklu tak <b>zbydou čísla 45 a 75</b>.
+        </li>
+        <li>
+            V druhém cyklu je provedena totožná operace. Zbydou tak <b>čísla 45 a 30</b>.
+        </li>
+        <li>
+            Dále pokračuje program také stejně. Zbydou <b>čísla 15 a 30</b>.
+        </li>
+        <li>
+            Poté zbydou <b>čísla 15 a 15</b>.
+        </li>
+        <li>
+            Program zjistil, že čísla jsou stejná a tak vrátí <b>NSD čísel 120 a 75, tedy číslo 15</b>.
+        </li>
+    </ol>
+
+    <p>
+        Algoritmus výše je originální algoritmus tak, jak byl v Řecku popsán a využíván. V programování je však pro
+        některá čísla také málo efektivní, a proto se využívá jeho obdoná implementace pomocí <b>operátoru modulo</b>.
+    </p>
+    <p>
+        Když totiž máme například čísla 1000 a 3, pak algoritmus stále dokola odčítá 3 od 1000, dokud nezjistí, že
+        jejich NSD je číslo 1. Proto se využívá algoritmus fungující právě na bázi zbytku po dělení, který si
+        ukážeme v zápětí.
+    </p>
+
+    <img src="/Users/jakub.sveda/Documents/IdeaProjects/DUAlgorithms/src/img/eukleiduvAlgoritmusModulo.png"
+         alt="Eukleidův algoritmus s modulem" width="auto" height="400"/>
+
+    <p>
+        Jakožto nejelegantnější řešení nalezení NSD je pomocí modula a rekurze zároveň. Následující algoritmus je
+        principem stejný jako předchozí, ale je o mnoho kratší a nevyužívá pomocnou proměnnou <b>c</b>.
+    </p>
+
+    <img src="/Users/jakub.sveda/Documents/IdeaProjects/DUAlgorithms/src/img/eukleiduvAlgoritmusModuloRekurzivni.png"
+         alt="Eukleidův algoritmus s modulem a rekurzí" width="auto" height="300"/>
+
+    <p>
+        Nyní si ukážeme jak takovýto algoritmus funguje:
+    </p>
+    <ol>
+        <li>
+            Na vstupu jsou <b>čísla 1000 a 3</b>
+        </li>
+        <li>
+            V prvním cyklu podmínka neplatí a tak se zavolá totožná metoda s upravenými vstupními hodnotami, jimiž jsou
+            čísla <b>3 a 1</b>
+        </li>
+        <li>
+            V dalším cyklu také podmínka neplatí a tak se znovu metoda zavolá tentokrát s <b>čísly 1 a 0</b>
+        </li>
+        <li>
+            Protože podmínka tentokrát platí vrátí se <b>číslo 1 jakožto NSD čísel 1000 a 3</b>.
+        </li>
+    </ol>
+    <p>
+        Výlesledek jsme oproti originálnímu Eukleidovu algoritmu s odčítáním čísel získali za pouhé tři cykly programu.
+        To je velké ušetření a přitom lze takový kód napsat na 2 řádky. <i>(v ukázce kódu je napsána podmínka na tři
+        řádky pro přehlednost, ale lze její zápis zkrátit pouze na jeden řádek)</i>
+    </p>
+
+    <hr>
+    <h2><b>NEJMENŠÍ SPOLEČNÝ NÁSOBEK (nsn)</b></h2>
+
+    <p>
+        Nejmenší společný násobek nalezneme relativně triviálním způsobem a to tak, že vstupní čísla <b>mezi sebou
+        vynásobíme</b> a poté <b>vydělíme jejich největším společným dělitelem</b>.
     </p>
 
     <p>
-        Jako první si ukážeme jak lze řešit první z těchto problémů, tedy NSD:
+        Algoritmus <b>nsn</b> tak může vypadat například takto:
     </p>
 
-
+    <img src="/Users/jakub.sveda/Documents/IdeaProjects/DUAlgorithms/src/img/nejmensiSpolecnyNasobek.png"
+         alt="algorimus pro nalezení nejmenšího společného násobku dvou přirozených čísel" width="auto" height="350"/>
+</div>
 </body>
 </html>

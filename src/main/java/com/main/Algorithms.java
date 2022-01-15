@@ -1,5 +1,6 @@
 package com.main;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -14,7 +15,7 @@ public class Algorithms {
      */
     public static void main(String[] args) {
         //System.out.println(isDelitelny(20, 3));
-        printNasobkyCislaZIntervalu(20, 100);
+        //printNasobkyCislaZIntervalu(20, 100);
         //printDvojiceScitancu(6);
         //System.out.println(isInArray(new int[] {1, 2, 3, 4, 5, 6}, 3));
         //System.out.println(vypocetPolynomu(1, new int[] {0, -2, 6, -8, 0, 0, 5}));
@@ -54,6 +55,8 @@ public class Algorithms {
         //System.out.println(soucetPrvkuMatice(new int[][] {{1, 2, 3}, {2, 4, 6}}));
         //System.out.println(soucetPrvkuPodHlavniDiagonalouMatice(new int[][] {{1, 2, 3}, {2, 4, 6}}));
         //System.out.println(Arrays.toString(getZitra(31, 12, 2000)));
+        //System.out.println(Arrays.toString(arrayReverse(new int[] {1, 2, 3, 4, 5, 6})));
+        System.out.println(1000 % 3);
     }
 
     /*
@@ -985,5 +988,15 @@ public class Algorithms {
                 return new int[] {1, mesic + 1, rok};
             }
         }
+    }
+
+    public static int[] arrayReverse(int[] a) {
+        for (int i = 0; i < (a.length / 2); i++) {
+            int vymena = a[i];
+            a[i] = a[a.length - i - 1];
+            a[a.length - i - 1] = vymena;
+        }
+
+        return a;
     }
 }
