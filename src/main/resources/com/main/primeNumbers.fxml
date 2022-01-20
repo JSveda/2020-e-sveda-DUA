@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.web.WebView?>
 
-<VBox styleClass="box" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.EukleidAlgorithm">
+<VBox styleClass="box" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.PrimeNumbers">
     <children>
-        <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="box" VBox.vgrow="ALWAYS">
+        <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="box" stylesheets="file:/Users/jakub.sveda/Documents/IdeaProjects/DUAlgorithms/src/main/java/com/main/css/SectionDesign.css" VBox.vgrow="ALWAYS">
             <children>
                 <VBox HBox.hgrow="ALWAYS">
                     <children>

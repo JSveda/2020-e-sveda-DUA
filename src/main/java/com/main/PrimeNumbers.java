@@ -16,7 +16,7 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class SimpleAlgorithms implements Initializable {
+public class PrimeNumbers implements Initializable {
     @javafx.fxml.FXML
     private Button mainMenuButton;
     @javafx.fxml.FXML
@@ -32,7 +32,7 @@ public class SimpleAlgorithms implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        File htmlFile = new File("src/main/java/com/main/htmlFiles/simpleAlgorithms.html");
+        File htmlFile = new File("src/main/java/com/main/htmlFiles/primeNumbers.html");
         webView.getEngine().load(htmlFile.toURI().toString());
     }
 

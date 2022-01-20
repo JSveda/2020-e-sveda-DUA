@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="cz">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            --darkBlue: rgb(11, 20, 37);
+            --lightBlue: rgb(20, 65, 210);
+            --yellow: rgb(251, 191, 57);
+        }
+
+        body {
+            background-color: var(--darkBlue);
+            color: var(--yellow);
+        }
+
+        h1 {
+            background: var(--lightBlue);
+            border: solid 1px var(--lightBlue);
+            border-radius: 30px;
+            text-align: center;
+            padding: 10px;
+            margin: 5px 15px 5px 5px;
+        }
+
+        #mainParagraph {
+            padding: 10px 30px;
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <h1>PRVOČÍSELNOST</h1>
+</div>
+<div id="mainParagraph">
+    <p>
+        Než začneme s další kapitolou, je potřeba, abychom pochopili základní pojem, na kterém tato kapitola staví a to
+        co je to vlastně prvočíslo.
+    </p>
+    <p>
+        PRVOČÍSLO je takové <b>přirozené</b> číslo, které <b>je dělitelné číslem 1 nebo samo sebou</b>.
+    </p>
+
+    <h2><b>TEST PRVOČÍSELNOSTI</b></h2>
+    <p>
+        Když testujeme prvočíselnost zadaného <b>přirozeného čísla (n)</b>, jedna z možností je napsat program, který
+        otestuje pomocí všech čísel od 2 do n-1, zda platí podmínka, že (n % testovanéČísloZRozmezí == 0). Když tato
+        podmínka platí, je zřejmé, že zadané <b>číslo n</b> NENÍ prvočíslem, protože má i jiného dělitele než 1 nebo
+        samo sebe. V tu chvíli může vrátit <b>false</b>. Pokud se však stane, že pro žádné z čísel podmínka platit
+        nebude, pak lze vrátit <b>true</b>, neboť jsme naším programem dokázali, že vstupní <b>číslo n</b> prvočíslem
+        je.
+    </p>
+    <h3>Nestačilo by rozsah zkrátit?</h3>
+    <p>
+        Odpověď je prostá, ANO.
+    </p>
+    <p>
+        Můžeme rozsah zkrátit například až na <b>druhou odmocninu čísla n</b>. Víme že pokud vytvoříme součin aktuálně
+        testovaného čísla (a) a vhodného přirozeného čísla (b) musí být číselně roven <b>vstupnímu číslu n</b>. Tedy
+        platí (ab = n). Budeme-li mít např. číslo 25 a nynějším testovaným číslem (a) bude číslo 4, pak musí být druhé
+        číslo (b) větší než 4, abychom dostali jejich součinem požadované číslo 25. Je tedy možné, že číslo je dělitelem
+        a je třeba ho otestovat. Pokud však budeme mít testované číslo (a) s hodnotou 5, pak druhé číslo (b) musí být
+        také 5. V tom případě by však číslo 5 bylo dělitelem a je jasné, že toto číslo nění prvočíslem. Da
+    </p>
+</div>
+</body>
+</html>

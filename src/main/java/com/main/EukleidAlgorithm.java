@@ -33,7 +33,7 @@ public class EukleidAlgorithm implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        File htmlFile = new File("/Users/jakub.sveda/Documents/IdeaProjects/DUAlgorithms/src/main/java/com/main/htmlFiles/eukleidAlgorithm.html");
+        File htmlFile = new File("src/main/java/com/main/htmlFiles/eukleidAlgorithm.html");
         webView.getEngine().load(htmlFile.toURI().toString());
     }
 
