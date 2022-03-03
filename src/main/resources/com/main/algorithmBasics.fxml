@@ -5,11 +5,10 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.web.WebView?>
-<?scenebuilder-stylesheet ./src/main/java/com/main/css/SectionDesign.css?>
 
 <VBox styleClass="box" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.AlgorithmBasics">
    <children>
-      <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="box" VBox.vgrow="ALWAYS">
+      <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="box" stylesheets="@../../../../src/main/java/com/main/css/SectionDesign.css" VBox.vgrow="ALWAYS">
          <children>
             <VBox HBox.hgrow="ALWAYS">
                <children>

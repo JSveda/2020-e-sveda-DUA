@@ -14,11 +14,11 @@
    <children>
       <HBox minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: rgb(11, 20, 37);" VBox.vgrow="ALWAYS">
          <children>
-            <VBox alignment="CENTER_RIGHT" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="250.0" spacing="5.0" style="-fx-background-color: rgb(25119157251,191,57); -fx-background-radius: 30px;" stylesheets="file:/Users/jakub.sveda/Documents/IdeaProjects/DUAlgorithms/src/main/java/com/main/css/TitleMainMenu.css" HBox.hgrow="NEVER">
+            <VBox alignment="CENTER_RIGHT" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="250.0" spacing="5.0" style="-fx-background-color: rgb(25119157251,191,57); -fx-background-radius: 30px;" stylesheets="@../../../../src/main/java/com/main/css/TitleMainMenu.css" HBox.hgrow="NEVER">
                <children>
                   <ImageView fx:id="logoImg" fitHeight="101.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true" translateX="-50.0" translateY="-20.0">
                      <image>
-                        <Image url="file:/Users/jakub.sveda/Documents/IdeaProjects/DUAlgorithms/src/img/logoDUAlg.png" />
+                        <Image url="@../../../../src/img/logoDUAlg.png" />
                      </image>
                      <effect>
                         <DropShadow height="20.0" offsetX="-3.0" offsetY="3.0" radius="9.5" spread="0.03" width="20.0">

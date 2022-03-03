@@ -137,7 +137,7 @@ public class MainMenuController implements Initializable {
         FileOutputStream f = null;
         ObjectOutputStream o = null;
         try {
-            f = new FileOutputStream("/Users/jakub.sveda/Documents/IdeaProjects/DUAlgorithms/src/main/java/com/main/files/listOfHrefs.dat");
+            f = new FileOutputStream("src/main/java/com/main/files/listOfHrefs.dat");
             o = new ObjectOutputStream(f);
             o.writeObject(items);
         } catch (IOException e) {
@@ -159,7 +159,7 @@ public class MainMenuController implements Initializable {
             }
         }
 
-        objectReader = new ObjectReader("/Users/jakub.sveda/Documents/IdeaProjects/DUAlgorithms/src/main/java/com/main/files/listOfHrefs.dat");
+        objectReader = new ObjectReader("src/main/java/com/main/files/listOfHrefs.dat");
 
         observableList.addAll(items.keySet());
         pathList.setItems(observableList);

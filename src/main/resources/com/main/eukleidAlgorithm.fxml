@@ -14,7 +14,7 @@
 
 <VBox styleClass="box" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.EukleidAlgorithm">
     <children>
-        <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="box" VBox.vgrow="ALWAYS">
+        <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="box" stylesheets="@../../../../src/main/java/com/main/css/SectionDesign.css" VBox.vgrow="ALWAYS">
             <children>
                 <VBox HBox.hgrow="ALWAYS">
                     <children>

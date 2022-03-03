@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Main extends Application {
-    private static boolean isFullscreen;
+    private static boolean isFullscreen = false;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -23,5 +23,13 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch();
+    }
+
+    public static boolean isFullscreen() {
+        return isFullscreen;
+    }
+
+    public static void setFullscreen(boolean isFullscreen) {
+        Main.isFullscreen = isFullscreen;
     }
 }
