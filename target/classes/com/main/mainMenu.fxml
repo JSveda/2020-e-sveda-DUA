@@ -58,7 +58,7 @@
                   </DropShadow>
                </effect>
             </VBox>
-            <ListView fx:id="pathList" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#goToPage" prefWidth="470.0" style="-fx-background-color: rgb(20, 65, 210); -fx-background-radius: 30px;" stylesheets="@../../../../src/main/java/com/main/css/ListViewMainMenu.css" HBox.hgrow="ALWAYS">
+            <ListView fx:id="pathList" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#goToPage" prefWidth="470.0" style="-fx-background-color: rgb(20, 65, 210); -fx-background-radius: 30px;" stylesheets="file:/Users/jakub.sveda/Documents/IdeaProjects/DUAlgorithms/src/main/java/com/main/css/ListViewMainMenu.css" HBox.hgrow="ALWAYS">
                <HBox.margin>
                   <Insets bottom="15.0" left="15.0" right="15.0" top="60.0" />
                </HBox.margin>
