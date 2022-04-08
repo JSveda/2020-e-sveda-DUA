@@ -50,8 +50,8 @@ public class TestPage implements Initializable {
         fileChooser.setTitle("Open File");
         File inputFile = fileChooser.showOpenDialog(null);
         fileNameLabel.setText(inputFile.getName());
-        Image cross = new Image("src/img/redCross.png", true);
-        Image tik = new Image("src/img/greenTik.png", true);
+        Image cross = new Image(new File("src/img/redCross.png").toURI().toString());
+        Image tik = new Image(new File("src/img/greenTik.png").toURI().toString());
         if (!inputFile.isFile() || !inputFile.exists()) {
             imageView.setImage(cross);
         } else {
