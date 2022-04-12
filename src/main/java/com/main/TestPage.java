@@ -1,5 +1,7 @@
 package com.main;
 
+import com.main.tests.SecondBiggestNumberInArray;
+import com.main.tests.TestRunner;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
@@ -55,7 +57,8 @@ public class TestPage implements Initializable {
         if (!inputFile.isFile() || !inputFile.exists()) {
             imageView.setImage(cross);
         } else {
-            if (true) {
+            SecondBiggestNumberInArray.setFile(inputFile);
+            if (TestRunner.test(SecondBiggestNumberInArray.class)) {
                 imageView.setImage(tik);
             } else {
                 imageView.setImage(cross);
