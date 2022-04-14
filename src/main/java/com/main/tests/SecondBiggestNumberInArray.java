@@ -1,5 +1,6 @@
 package com.main.tests;
 
+import com.main.tools.FileClonner;
 import org.junit.Test;
 
 import javax.tools.ToolProvider;
@@ -15,6 +16,7 @@ import static org.junit.Assert.assertEquals;
 
 public class SecondBiggestNumberInArray {
     private static File file;
+    private static String workPath = "src/main/java/com/main/filesToTest/";
 
     @Test
     public void isCorrect() {
@@ -26,51 +28,42 @@ public class SecondBiggestNumberInArray {
 
     private int getMethodResult(int[] request) {
         int response = -1;
-
-        // JavaCompiler, ToolProvider download
-        JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
-        int compilerResult = compiler.run(null, null, null, file.getPath());
-        System.out.println((compilerResult == 0) ? "Compiled successfully" : "Compile failed");
+        String filePath = file.getPath();
 
         // TODO copy file to `/filesToTest` folder and than work with them
-        File copy = new File("/src/com/main/filesToTest/DruheNejvetsiCislo.java");
+        workPath += filePath.substring((filePath.lastIndexOf("/") + 1), filePath.lastIndexOf("."));
+        System.out.println(workPath + ".java");
+        System.out.println((FileClonner.clonFileToTest(getFile(), (workPath + ".java"))) ? "Cloned successfully" : "Clon failed");
+
+        File workFile = new File(workPath + ".java");
+        System.out.println(workFile.getPath());
+        File classFile;
+
         try {
-            if (copy.createNewFile())
-                System.out.println("File created");
-            else
-                System.out.println("Creation failed");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            // JavaCompiler, ToolProvider download - compilation
+            JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+            int compilerResult = compiler.run(null, null, null, (workPath + ".java"));
+            System.out.println((compilerResult == 0) ? "Compiled successfully" : "Compile failed");
 
-
-
-        /*
-        try {
-            String classFilePath = file.getPath().substring(0, file.getPath().lastIndexOf("."));
-            System.out.println(classFilePath);
-            File classFile = new File(classFilePath + ".class");
+            classFile = new File(workPath + ".class");
 
             URL url = classFile.toURI().toURL();
+            // Load and run class method
             URLClassLoader loader = new URLClassLoader(new URL[] {url});
-
-            Class<?> cls = loader.loadClass("DruheNejvetsiCislo");
+            Class<?> cls = loader.loadClass("com.main.filesToTest.DruheNejvetsiCislo");
             Method method = cls.getMethod("druheNejvetsiCislo", int[].class);
-
-            loader.close();
-
             // set response
             response = (int) method.invoke(null, (Object) request);
 
+            loader.close();
+
             // delete class file
-            if (classFile.delete())
-                System.out.println("File deleted");
-            else
-                System.out.println("Delete failed");
+            System.out.println((classFile.delete()) ? (classFile.getPath() + " deleted") : "Delete failed");
+            System.out.println((workFile.delete()) ? (workFile.getPath() + " deleted") : "Delete failed");
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-         */
 
         return response;
     }
@@ -78,4 +71,9 @@ public class SecondBiggestNumberInArray {
     public static void setFile(File file) {
         SecondBiggestNumberInArray.file = file;
     }
+
+    public static File getFile() {
+        return file;
+    }
+
 }
