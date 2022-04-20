@@ -49,11 +49,13 @@ public class SecondBiggestNumberInArray {
         // JavaCompiler, ToolProvider download - compilation
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
         int compilerResult = compiler.run(null, null, null, (newJavaFilePath));
+
+        System.out.println((javaFile.delete()) ? (javaFile.getPath() + " deleted") : "Delete failed");
+
         if (compilerResult == 0)
             System.out.println("Compiled successfully");
         else {
             System.out.println("Compile failed");
-            System.out.println((javaFile.delete()) ? (javaFile.getPath() + " deleted") : "Delete failed");
             return -1;
         }
         classFile = new File(newClassFilePath);
@@ -71,7 +73,6 @@ public class SecondBiggestNumberInArray {
 
         // delete class file
         System.out.println((classFile.delete()) ? (classFile.getPath() + " deleted") : "Delete failed");
-        System.out.println((javaFile.delete()) ? (javaFile.getPath() + " deleted") : "Delete failed");
 
         System.out.println();
         file = null;
