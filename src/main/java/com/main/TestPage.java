@@ -64,6 +64,8 @@ public class TestPage implements Initializable {
                 imageView.setImage(cross);
             }
         }
+
+        cross.cancel();
     }
 
     @javafx.fxml.FXML

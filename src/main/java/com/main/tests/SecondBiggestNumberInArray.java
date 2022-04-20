@@ -6,7 +6,6 @@ import org.junit.Test;
 import javax.tools.ToolProvider;
 
 import java.io.File;
-import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -16,7 +15,11 @@ import static org.junit.Assert.assertEquals;
 
 public class SecondBiggestNumberInArray {
     private static File file;
-    private static String workPath = "src/main/java/com/main/filesToTest/";
+    private static String defaultPath;
+    private static String fileName;
+    private static final String JAVA_EXTENSION = ".java";
+    private static final String CLASS_EXTENSION = ".class";
+    private static final String methodName = "druheNejvetsiCislo";
 
     @Test
     public void isCorrect() {
@@ -27,44 +30,52 @@ public class SecondBiggestNumberInArray {
     }
 
     private int getMethodResult(int[] request) {
+        setDefaultPath();
         int response = -1;
         String filePath = file.getPath();
 
         // TODO copy file to `/filesToTest` folder and than work with them
-        workPath += filePath.substring((filePath.lastIndexOf("/") + 1), filePath.lastIndexOf("."));
-        System.out.println(workPath + ".java");
-        System.out.println((FileClonner.clonFileToTest(getFile(), (workPath + ".java"))) ? "Cloned successfully" : "Clon failed");
+        fileName = filePath.substring((filePath.lastIndexOf("/") + 1), filePath.lastIndexOf("."));
 
-        File workFile = new File(workPath + ".java");
-        System.out.println(workFile.getPath());
+        String newJavaFilePath = defaultPath + fileName + JAVA_EXTENSION;
+        String newClassFilePath = defaultPath + fileName + CLASS_EXTENSION;
+        System.out.println("java: " + newJavaFilePath + "\nclass: " + newClassFilePath);
+
+        // Clon file
+        System.out.println((FileClonner.clonFileToTest(file, newJavaFilePath)) ? "Cloned successfully" : "Clon failed");
+
+        File javaFile = new File(newJavaFilePath);
         File classFile;
+        // JavaCompiler, ToolProvider download - compilation
+        JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+        int compilerResult = compiler.run(null, null, null, (newJavaFilePath));
+        if (compilerResult == 0)
+            System.out.println("Compiled successfully");
+        else {
+            System.out.println("Compile failed");
+            System.out.println((javaFile.delete()) ? (javaFile.getPath() + " deleted") : "Delete failed");
+            return -1;
+        }
+        classFile = new File(newClassFilePath);
 
-        try {
-            // JavaCompiler, ToolProvider download - compilation
-            JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
-            int compilerResult = compiler.run(null, null, null, (workPath + ".java"));
-            System.out.println((compilerResult == 0) ? "Compiled successfully" : "Compile failed");
-
-            classFile = new File(workPath + ".class");
-
-            URL url = classFile.toURI().toURL();
+        try (URLClassLoader loader = new URLClassLoader(new URL[]{classFile.toURI().toURL()})) {
             // Load and run class method
-            URLClassLoader loader = new URLClassLoader(new URL[] {url});
-            Class<?> cls = loader.loadClass("com.main.filesToTest.DruheNejvetsiCislo");
-            Method method = cls.getMethod("druheNejvetsiCislo", int[].class);
-            // set response
+            String packageName = "com.main.filesToTest." + fileName;
+            Class<?> cls = loader.loadClass(packageName);
+            Method method = cls.getMethod(methodName, int[].class);
+            // set response by invoking the extracted method
             response = (int) method.invoke(null, (Object) request);
-
-            loader.close();
-
-            // delete class file
-            System.out.println((classFile.delete()) ? (classFile.getPath() + " deleted") : "Delete failed");
-            System.out.println((workFile.delete()) ? (workFile.getPath() + " deleted") : "Delete failed");
-
         } catch (Exception e) {
             e.printStackTrace();
         }
 
+        // delete class file
+        System.out.println((classFile.delete()) ? (classFile.getPath() + " deleted") : "Delete failed");
+        System.out.println((javaFile.delete()) ? (javaFile.getPath() + " deleted") : "Delete failed");
+
+        System.out.println();
+        file = null;
+        System.out.println("response: " + response);
         return response;
     }
 
@@ -72,8 +83,7 @@ public class SecondBiggestNumberInArray {
         SecondBiggestNumberInArray.file = file;
     }
 
-    public static File getFile() {
-        return file;
+    public static void setDefaultPath() {
+        SecondBiggestNumberInArray.defaultPath = "src/main/java/com/main/filesToTest/";
     }
-
 }

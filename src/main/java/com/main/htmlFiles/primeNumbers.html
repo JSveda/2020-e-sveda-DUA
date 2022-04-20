@@ -57,12 +57,14 @@
         Odpověď je prostá, ANO.
     </p>
     <p>
-        Můžeme rozsah zkrátit například až na <b>druhou odmocninu čísla n</b>. Víme že pokud vytvoříme součin aktuálně
-        testovaného čísla (a) a vhodného přirozeného čísla (b) musí být číselně roven <b>vstupnímu číslu n</b>. Tedy
-        platí (ab = n). Budeme-li mít např. číslo 25 a nynějším testovaným číslem (a) bude číslo 4, pak musí být druhé
-        číslo (b) větší než 4, abychom dostali jejich součinem požadované číslo 25. Je tedy možné, že číslo je dělitelem
-        a je třeba ho otestovat. Pokud však budeme mít testované číslo (a) s hodnotou 5, pak druhé číslo (b) musí být
-        také 5. V tom případě by však číslo 5 bylo dělitelem a je jasné, že toto číslo nění prvočíslem. Da
+        Můžeme rozsah zkrátit například až na <b>druhou odmocninu čísla n</b>. Pro pochopení, proč to takto funguje si
+        to nyní ukážeme na příkladu. Mějme například číslo 13. Abychom zjistili, že je číslo 13 prvočíslo, nesmí se
+        stát, abychom našli 2 přirozená čísla, jejichž součin bude 13. Tzn. nesmí platit <b>a*b = n</b>. Speciálním
+        případem tohoto vzorce může být situace, kdy a i b budou stejné, pak budou tyto proměnné rovny druhé odmocnině z
+        n. Dále z matematiky víme, že čím a i b jsou ve vztahu nepřímé úměrnosti. Aby tedy platil tento vzorec musí také
+        platit, že čím větší je a, tím menší je b a obráceně. Když tedy budeme dělit číslo n (v tomto případě 13)
+        většími čísli než je právě odmocnina z n, pak bude druhým činitelem desetinné číslo nebo přirozené číslo menší
+        než odmocnina z n. Dělění většími čísli tak není třeba.
     </p>
 </div>
 </body>
