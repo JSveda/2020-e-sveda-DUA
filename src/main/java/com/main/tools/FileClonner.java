@@ -5,6 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import org.apache.commons.lang3.ArrayUtils;
 
 public class FileClonner {
     public static boolean clonFileToTest(File original, String newPath) {
@@ -25,6 +26,12 @@ public class FileClonner {
             byte[] buffer = new byte[1024];
             int lengthRead;
             while ((lengthRead = in.read(buffer)) > 0) {
+                String potencialPackage = new String(buffer, StandardCharsets.UTF_8).split(" ")[0];
+                if (potencialPackage.equals("package")) {
+                    out.write(ArrayUtils.addAll("// ".getBytes(StandardCharsets.UTF_8), buffer));
+                    continue;
+                }
+                System.out.println(new String(buffer, StandardCharsets.UTF_8));
                 out.write(buffer, 0, lengthRead);
                 out.flush();
             }

@@ -58,13 +58,51 @@
     </p>
     <p>
         Můžeme rozsah zkrátit například až na <b>druhou odmocninu čísla n</b>. Pro pochopení, proč to takto funguje si
-        to nyní ukážeme na příkladu. Mějme například číslo 13. Abychom zjistili, že je číslo 13 prvočíslo, nesmí se
+        nyní ukážeme příklad. Mějme například číslo 13. Abychom zjistili, že je číslo 13 prvočíslo, nesmí se
         stát, abychom našli 2 přirozená čísla, jejichž součin bude 13. Tzn. nesmí platit <b>a*b = n</b>. Speciálním
         případem tohoto vzorce může být situace, kdy a i b budou stejné, pak budou tyto proměnné rovny druhé odmocnině z
         n. Dále z matematiky víme, že čím a i b jsou ve vztahu nepřímé úměrnosti. Aby tedy platil tento vzorec musí také
         platit, že čím větší je a, tím menší je b a obráceně. Když tedy budeme dělit číslo n (v tomto případě 13)
         většími čísli než je právě odmocnina z n, pak bude druhým činitelem desetinné číslo nebo přirozené číslo menší
-        než odmocnina z n. Dělění většími čísli tak není třeba.
+        než odmocnina z n. Dělění většími čísli tak není nutné. Nyní tedy víme, proč dělení testujeme pouze do odmocniny
+        z n včetně.
+    </p>
+    <p>
+        Takový algoritmus můžeme zapsat následovně:
+    </p>
+    <img src="/Users/jakub.sveda/Documents/IdeaProjects/DUAlgorithms/src/img/jePrvocislo.png"
+         alt="algoritmus nasobky z intervalu" width="auto" height="450"/>
+    <p>
+        Jako vždy i tento algoritmus není ještě dokonalý. Zkusme se podívat například na odmocninu, kterou počítáme.
+        Když počítáme z nějakého čísla odmocninu, je dost pravděpodobné, že vznikne číslo s nekonečným rozvojem míst.
+        Tzn., že číslo, které spočítme může mít jisté nepřesnosti, neboť je pouze zaokrouhlené, a zároveň je počítání
+        odmocniny poměrně náročná operace. Z toho důvodu nahradíme podmínku while smyčky lepším zápisem: <b>pocitadlo *
+        pocitadlo <= n</b>. Matematicky je takový zápis totožný s předchozím zápisem s odmocninou, ale je mnohem
+        jednodušší na výpočet, leč ho provádíme při každé iteraci smyčky.
+    </p>
+    <p>
+        Dalším zjednodušením může být eliminace násobků 2, čímž odstraníme značnou část možností, konkrétně každé druhé
+        číslo. Na začátku tak
+        otestujeme zda číslo n není dělitelné 2. A když ano, vrátíme výsledek podmínky, zda číslo n není 2. Kdyby totiž
+        n bylo 2, znamená to, že je n prvočíslem. V opačném případě to mohou být jiné násobky 2, což prvočísla s
+        jistotou nejsou.
+    </p>
+    <p>
+        Zbytek stávajícího algoritmu se již nezmění a tak nakonec může jeho finální verze vypadat takto:
+    </p>
+    <img src="/Users/jakub.sveda/Documents/IdeaProjects/DUAlgorithms/src/img/jePrvocisloLepe.png"
+         alt="algoritmus nasobky z intervalu" width="auto" height="450"/>
+
+    <hr>
+    <h2><b>ERATOSTHENOVO SÍTO</b></h2>
+    <p>
+        Představme si situaci, kdy potřebujeme najít a uložit všechna prvočísla od 1 do n. V takové situaci se používá
+        takzvané Eratosthenovo síto. V praxi ho reprezentuje pole proměnných typu boolean. Indexy pole reprezentijí
+        přirozené číslo a hodnota na daném indexu říká, zda číslo je (true) nebo není (false) prvočíslo.
+    </p>
+    <p>
+        Algoritmus tak bude metoda vracící zmíněné pole booleanů. Na začátku metody ho vytvoříme <b>o délce n + 1</b>,
+        abychom otestovali a zahrnuli do výsledku i samotné číslo n.
     </p>
 </div>
 </body>

@@ -95,7 +95,7 @@ public class MainMenuController implements Initializable {
         items.put("Nejmenší společný násobek", "");
         items.put("PRVOČÍSELNOST", "primeNumbers.fxml");
         items.put("Test prvočíselnosti", "");
-        items.put("Eratostedovo síto", "");
+        items.put("Eratosthenovo síto", "");
         items.put("Prvočíselný rozklad", "");
         items.put("VYHLEDÁVÁNÍ V POLI", "arraySearching.fxml");
         items.put("Sekvenční vyhledávání", "");

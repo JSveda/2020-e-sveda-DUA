@@ -3,13 +3,20 @@ package com.main.tests;
 import com.main.tools.FileClonner;
 import org.junit.Test;
 
+import javax.tools.JavaCompiler;
 import javax.tools.ToolProvider;
-
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.ClassLoader;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLClassLoader;
-import javax.tools.JavaCompiler;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Objects;
 
 import static org.junit.Assert.assertEquals;
 
@@ -39,18 +46,20 @@ public class SecondBiggestNumberInArray {
 
         String newJavaFilePath = defaultPath + fileName + JAVA_EXTENSION;
         String newClassFilePath = defaultPath + fileName + CLASS_EXTENSION;
+        String classFileRootDirPath = "src/main/java/";
         System.out.println("java: " + newJavaFilePath + "\nclass: " + newClassFilePath);
 
         // Clon file
         System.out.println((FileClonner.clonFileToTest(file, newJavaFilePath)) ? "Cloned successfully" : "Clon failed");
 
         File javaFile = new File(newJavaFilePath);
-        File classFile;
+        File classFile = new File(newClassFilePath);
+        File classFileRootDir;
         // JavaCompiler, ToolProvider download - compilation
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
         int compilerResult = compiler.run(null, null, null, (newJavaFilePath));
 
-        System.out.println((javaFile.delete()) ? (javaFile.getPath() + " deleted") : "Delete failed");
+        //System.out.println((javaFile.delete()) ? (javaFile.getPath() + " deleted") : "Delete failed");
 
         if (compilerResult == 0)
             System.out.println("Compiled successfully");
@@ -58,9 +67,21 @@ public class SecondBiggestNumberInArray {
             System.out.println("Compile failed");
             return -1;
         }
-        classFile = new File(newClassFilePath);
 
-        try (URLClassLoader loader = new URLClassLoader(new URL[]{classFile.toURI().toURL()})) {
+        classFileRootDir = new File(classFileRootDirPath);
+        /*
+        Runtime rt = Runtime.getRuntime();
+        try {
+            Process pr = rt.exec("java -jar " + fileName + ".jar " + fileName + ".class");
+            pr.
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        jarFile = new File(defaultPath + fileName + ".jar");
+         */
+
+        try (URLClassLoader loader = new URLClassLoader(new URL[]{classFileRootDir.toURI().toURL()})) {
             // Load and run class method
             String packageName = "com.main.filesToTest." + fileName;
             Class<?> cls = loader.loadClass(packageName);
@@ -86,5 +107,6 @@ public class SecondBiggestNumberInArray {
 
     public static void setDefaultPath() {
         SecondBiggestNumberInArray.defaultPath = "src/main/java/com/main/filesToTest/";
+        SecondBiggestNumberInArray.fileName = "";
     }
 }

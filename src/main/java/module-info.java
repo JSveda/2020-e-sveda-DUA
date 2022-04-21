@@ -12,6 +12,7 @@ module com.example.dualgorithms {
     requires junit;
     requires java.compiler;
     requires org.jetbrains.annotations;
+    requires org.apache.commons.lang3;
 
     opens com.main to javafx.fxml;
     exports com.main;
