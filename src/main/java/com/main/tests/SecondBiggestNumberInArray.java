@@ -1,22 +1,15 @@
 package com.main.tests;
 
 import com.main.tools.FileClonner;
+import com.main.tools.FilePrinter;
 import org.junit.Test;
 
 import javax.tools.JavaCompiler;
 import javax.tools.ToolProvider;
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.ClassLoader;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLClassLoader;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Objects;
 
 import static org.junit.Assert.assertEquals;
 
@@ -53,13 +46,15 @@ public class SecondBiggestNumberInArray {
         System.out.println((FileClonner.clonFileToTest(file, newJavaFilePath)) ? "Cloned successfully" : "Clon failed");
 
         File javaFile = new File(newJavaFilePath);
-        File classFile = new File(newClassFilePath);
-        File classFileRootDir;
+        File classFileRootDir = new File(classFileRootDirPath);
+
         // JavaCompiler, ToolProvider download - compilation
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
         int compilerResult = compiler.run(null, null, null, (newJavaFilePath));
 
-        //System.out.println((javaFile.delete()) ? (javaFile.getPath() + " deleted") : "Delete failed");
+        File classFile = new File(newClassFilePath);
+
+        System.out.println((javaFile.delete()) ? (javaFile.getPath() + " deleted") : "Delete failed");
 
         if (compilerResult == 0)
             System.out.println("Compiled successfully");
@@ -67,8 +62,6 @@ public class SecondBiggestNumberInArray {
             System.out.println("Compile failed");
             return -1;
         }
-
-        classFileRootDir = new File(classFileRootDirPath);
         /*
         Runtime rt = Runtime.getRuntime();
         try {

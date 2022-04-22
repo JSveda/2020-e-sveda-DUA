@@ -3,7 +3,7 @@ package com.main.justPackage;
 public class DruheNejvetsiCislo {
     public static int druheNejvetsiCislo(int[] arr) {
         int max = -1, max2 = -1;
-        for (int element: arr) {
+        for (int element : arr) {
             if (element > max) {
                 max2 = max;
                 max = element;
@@ -13,3 +13,4 @@ public class DruheNejvetsiCislo {
         return max2;
     }
 }
+
