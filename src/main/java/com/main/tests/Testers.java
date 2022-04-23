@@ -23,7 +23,7 @@ public class Testers {
         int response = -1;
         String filePath = file.getPath();
 
-        // TODO copy file to `/filesToTest` folder and than work with them
+        // extract fileName
         fileName = filePath.substring((filePath.lastIndexOf("/") + 1), filePath.lastIndexOf("."));
 
         String newJavaFilePath = defaultPath + fileName + JAVA_EXTENSION;
@@ -77,7 +77,7 @@ public class Testers {
         ArrayList<Integer> response = new ArrayList<>();
         String filePath = file.getPath();
 
-        // TODO copy file to `/filesToTest` folder and than work with them
+        //extract fileName
         fileName = filePath.substring((filePath.lastIndexOf("/") + 1), filePath.lastIndexOf("."));
 
         String newJavaFilePath = defaultPath + fileName + JAVA_EXTENSION;

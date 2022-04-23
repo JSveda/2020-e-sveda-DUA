@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="cz">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            --darkBlue: rgb(11, 20, 37);
+            --lightBlue: rgb(20, 65, 210);
+            --yellow: rgb(251, 191, 57);
+        }
+
+        body {
+            background-color: var(--darkBlue);
+            color: var(--yellow);
+        }
+
+        h1 {
+            background: var(--lightBlue);
+            border: solid 1px var(--lightBlue);
+            border-radius: 30px;
+            text-align: center;
+            padding: 10px;
+            margin: 5px 15px 5px 5px;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        #mainParagraph {
+            padding: 10px 30px;
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <h1>VYHLEDÁVÁNÍ V POLI</h1>
+</div>
+<div id="mainParagraph">
+    <p>
+        V této kapitole si představíme 3 základní způsoby, jak vyhledat index nějakého čísla v poli.
+    </p>
+
+    <hr>
+    <h2><b>SEKVENČNÍ VYHLEDÁVÁNÍ</b></h2>
+    <p>
+        Prvním způsobem, jak najít index čísla v poli, je projít dané pole jedním cyklem a když narazíme na hledané
+        číslo, tak ho vrátit. Pokud ho v poli nenajdeme, vrátíme libovolnou hodnotu, podle které poznáme, že v poli
+        není - <b><i>např. vrátit -1</i></b>. Vzhledem k tomu, že se v algoritmu bude vyskytovat jen jedna smyčka,
+        největší asymptotická složitost bude <b>O(n)</b>, kde <b>n</b> značí počet prvků v poli. Složitost tak bude
+        lineární. Takový algoritmus vypadá následovně:
+    </p>
+    <img src="../../../../../../src/img/najdiCisloSekvencne.png"
+         alt="algoritmus nasobky z intervalu" width="auto" height="350"/>
+    <p>
+        Obdobně lze vytvořit stejný algoritmus, ale pomocí <b>while smyčky</b>.
+    </p>
+    <img src="../../../../../../src/img/najdiCisloSekvencneWhileLoop.png"
+         alt="algoritmus nasobky z intervalu" width="auto" height="300"/>
+
+    <hr>
+    <h2><b>SEKVENČNÍ VYHLEDÁVÁNÍ SE ZARÁŽKOU</b></h2>
+    <p>
+        Sekvenční vyhledávání se zarážkou je prakticky totožný program, který však oproti klasickému sekvenčnímu
+        vyhledávání ušetří jednu podmínku. Jako u všech algoritmů, ani zde ušetření času není "zadarmo", ale je pouze
+        výměnou za paměť. U tohohoto algoritmu předpokládáme, že dostaneme pole o jedno místo na konci větší. Algoritmus
+        totiž funguje tak, že so posledního prvku v poli vloží hodnotu hledaného čísla. Poté pole projde a vrátí číslo
+        indexu, na kterém ho našel. Když číslo bude odpovídat poslednímu prvku v poli, tak víme, že se v původním poli
+        nevyskytuje. Takovýto algoritmus má také asymptotickou časovou složitost <b>O(n)</b>, kde <b>n</b> je počet
+        prvků v poli. Vypadá potom takto:
+    </p>
+    <img src="../../../../../../src/img/najdiCisloSekvencneSeZarazkou.png"
+         alt="algoritmus nasobky z intervalu" width="auto" height="350"/>
+
+    <hr>
+    <h2><b>BINÁRNÍ VYHLEDÁVÁNÍ</b></h2>
+    <p>
+        Posledním způsobem vyhledávání je binární vyhledávání. To je ze všech nejrychlejší a má nejmenší časovou
+        složitost, která odpovídá <b>O(log n)</b>. Tento způsob má však jednu podstatnou podmínku a to, že pole, ve
+        kterém hledáme, musí být seřazené od největších čísel po nejmenší. Jeho princip je takový, že se algoritmus
+        podívá do prostřed pole a když je zde hledané číslo, vrátí jeho index. Jinak rozhodne, zda je hledané číslo
+        vetší, pokračuje ve stejném hledání v pravé části pole. V opačném případě v levé části pole. Takto pokračuje,
+        dokud číslo není nalezeno, nebo již nelze interval hledání zkrátit. Když číslo v poli není, vrátí <b><i>číslo
+        -1</i></b><br>Je důležité podotknout, že rovnat pole, abychom v něm mohli binárně vyhledávat, se zcela jistě
+        nevyplatí. To proto, že srovnání pole dokážeme v nejlepším případě dosáhnout v čase <b>O(n * log n)</b>.
+    </p>
+    <img src="../../../../../../src/img/najdiCisloBinarnimVyhledavanim.png"
+         alt="algoritmus nasobky z intervalu" width="auto" height="500"/>
+</div>
+</body>
+</html>

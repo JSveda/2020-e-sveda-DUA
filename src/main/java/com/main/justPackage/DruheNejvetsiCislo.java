@@ -10,6 +10,7 @@ public class DruheNejvetsiCislo {
             } else if (element > max2)
                 max2 = element;
         }
+
         return max2;
     }
 }
