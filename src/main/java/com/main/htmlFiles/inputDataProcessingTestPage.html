@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            --darkBlue: rgb(11, 20, 37);
+            --lightBlue: rgb(20, 65, 210);
+            --yellow: rgb(251, 191, 57);
+        }
+
+        body {
+            background-color: var(--darkBlue);
+            color: var(--yellow);
+        }
+
+        h1 {
+            background: var(--lightBlue);
+            border: solid 1px var(--lightBlue);
+            border-radius: 30px;
+            text-align: center;
+            padding: 10px;
+            margin: 5px 15px 5px 5px;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        #mainParagraph {
+            padding: 10px 30px;
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="mainParagraph">
+    <hr>
+    <p>
+        Zkuste pomocí jakéhokoli vývojového nástroje naprogramovat v jazyce Java program, který bude v samostatné třídě.
+        Jeho zadání naleznete níže. Poté odevzdejte jeho verzi ve formátu nazevProgramu.java kliknutím na tlačítko
+        "Vybrat soubor". Následně aplikace vyhodnotí, zda jste úkol splnil/a.<br>
+        Pokud je Vaše řešení funkční, zobrazí se "zelená fajfka". V opačném případě se zobrazí červený křížek.
+    </p>
+    <h3><u>Kroky binárního vyhledávání</u></h3>
+    <p>
+        Napište metodu s názvem <b><i>minMaxZeVstupu</i></b>, která dostane v hlavičce jako parametr <b>objekt typu <i>File</i>
+        a bude <b>vracet pole <i>typu int</i> se dvěma prvky</b>. První prvek pole bude reprezentovat zjištěné minimum a
+        druhý maximum. Napište program, který bude hledat tyto hodnoty v textovém souboru, který dostane jako parametr.
+    </p>
+    <h4>Nápověda:</h4>
+    <p>
+        Pro čtení použijte objekt Scanner, který dostane v konstruktoru soubor, ze kterého budete chtít číst. Dále
+        použijte jeho metodu <i>nextInt()</i>. Pro zjištění, jestli není konec souboru použije jeho metodu
+        <i>hasNext()</i> s návratovou hodnotou boolean.
+    </p>
+    <h4>Nejlepší řešení:</h4>
+    <img src="../../../../../../src/img/"
+         alt="algoritmus na test dělitelnosti" width="auto" height="500"/>
+
+
+</div>
+</body>
+</html>
