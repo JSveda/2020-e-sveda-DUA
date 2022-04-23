@@ -1,8 +1,9 @@
 package com.main;
 
-import com.main.tests.SecondBiggestNumberInArray;
+import com.main.tests.PrimeDecomposition;
 import com.main.tests.TestRunner;
-import javafx.event.ActionEvent;
+import com.main.tests.Testers;
+import com.main.tools.Utils;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -11,10 +12,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.web.WebView;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -23,7 +22,7 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class TestPage implements Initializable {
+public class PrimeNumbersTestPage implements Initializable {
 
     @javafx.fxml.FXML
     private Label fileNameLabel;
@@ -42,30 +41,25 @@ public class TestPage implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        File htmlFile = new File("src/main/java/com/main/htmlFiles/simpleAlgorithmsTestPage.html");
+        File htmlFile = new File("src/main/java/com/main/htmlFiles/primeNumbersTestPage.html");
         webView.getEngine().load(htmlFile.toURI().toString());
     }
 
     @javafx.fxml.FXML
-    public void chooseFile(ActionEvent actionEvent) {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Open File");
-        File inputFile = fileChooser.showOpenDialog(null);
+    public void chooseFile() {
+        var inputFile = Utils.chooseFile();
         fileNameLabel.setText(inputFile.getName());
-        Image cross = new Image(new File("src/img/redCross.png").toURI().toString());
-        Image tik = new Image(new File("src/img/greenTik.png").toURI().toString());
         if (!inputFile.isFile() || !inputFile.exists()) {
-            imageView.setImage(cross);
+            imageView.setImage(Utils.getCross());
         } else {
-            SecondBiggestNumberInArray.setFile(inputFile);
-            if (TestRunner.test(SecondBiggestNumberInArray.class)) {
-                imageView.setImage(tik);
+            Testers.setFile(inputFile);
+            Testers.setMethodName("prvociselnyRozklad");
+            if (TestRunner.test(PrimeDecomposition.class)) {
+                imageView.setImage(Utils.getTik());
             } else {
-                imageView.setImage(cross);
+                imageView.setImage(Utils.getCross());
             }
         }
-
-        cross.cancel();
     }
 
     @javafx.fxml.FXML

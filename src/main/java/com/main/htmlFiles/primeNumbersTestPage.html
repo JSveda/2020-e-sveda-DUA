@@ -43,18 +43,22 @@
         "Vybrat soubor". Následně aplikace vyhodnotí, zda jste úkol splnil/a.<br>
         Pokud je Vaše řešení funkční, zobrazí se "zelená fajfka". V opačném případě se zobrazí červený křížek.
     </p>
-    <h3><u>Nalezení čísla v poli</u></h3>
+    <h3><u>Prvočíselný rozklad</u></h3>
     <p>
-        Napište metodu s názvem <b><i>druheNejvetsiCislo</i></b>, která dostane v hlavičce jako parametr <b>pole typu <i>int</i></b> a
-        bude <b>vracet proměnnou typu <i>int</i></b>. Metoda nalezne druhé největší číslo ve vstupním poli a vrátí ho.
-        Když se v poli nenachází, pak metoda <b>vrátá -1</b>. Předpokládejme, že ve vstupním poli budou pouze kladná
-        čísla.
+        Napište metodu s názvem <b><i>prvociselnyRozklad</i></b>, která dostane v hlavičce jako parametr <b>proměnnou
+        typu <i>int</i></b> a
+        bude <b>vracet ArrayList <i>objektů typu Integer</i></b>. Metoda vrátí v ArrayListu seznam prvočinitelů
+        vstupního čísla. V tomto seznamu se prvočinitelé nesmí opakovat. Tzn. když bude vstupním číslem číslo 20, pak je
+        jeho prvočíselný rozklad <b>2 * 2 * 5</b>. Program ale vrátí ArrayList s hodnotami pouze 2 a 5. Dále musí být ve
+        výsledném seznamu prvočísla zapsána od nejmenšího po největší.
     </p>
     <h4>Nápověda:</h4>
-    <p>Aby byl program co nejefektivnější, použijte dvě proměnné - maximum a druhé maximum.</p>
+    <p>
+        Inspirujte se řešením z kapitoly o prvočíselném rozkladu, ze kterého řešení této úlohy vychází.
+    </p>
     <h4>Nejlepší řešení:</h4>
-    <img src="../../../../../../src/img/druheNejvetsiCislo.png"
-         alt="algoritmus na test dělitelnosti" width="auto" height="450"/>
+    <img src="../../../../../../src/img/prvociselnyRozkladTest.png"
+         alt="algoritmus na test dělitelnosti" width="auto" height="500"/>
 
 
 </div>

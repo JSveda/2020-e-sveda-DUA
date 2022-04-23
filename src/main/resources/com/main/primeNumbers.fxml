@@ -21,6 +21,7 @@
                         <WebView fx:id="webView" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS" />
                         <HBox alignment="CENTER_RIGHT" prefHeight="50.0" spacing="20.0" style="-fx-background-color: rgb(11, 20, 37);" VBox.vgrow="NEVER">
                             <children>
+                                <Button fx:id="testButton" mnemonicParsing="false" onMouseClicked="#goToTestPage" text="Test" />
                                 <Button fx:id="mainMenuButton" mnemonicParsing="false" onMouseClicked="#goToMainMenu" text="Hlavní menu" />
                                 <Button fx:id="previousPageButton" mnemonicParsing="false" onMouseClicked="#goToPreviousPage" text="Předchozí stránka" />
                                 <Button fx:id="nextPageButton" mnemonicParsing="false" onMouseClicked="#goToNextPage" text="Následující stránka" />

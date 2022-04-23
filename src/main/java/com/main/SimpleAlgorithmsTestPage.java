@@ -1,5 +1,10 @@
 package com.main;
 
+import com.main.tests.SecondBiggestNumberInArray;
+import com.main.tests.TestRunner;
+import com.main.tests.Testers;
+import com.main.tools.Utils;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -7,7 +12,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
@@ -17,15 +23,18 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class PrimeNumbers implements Initializable {
+public class SimpleAlgorithmsTestPage implements Initializable {
+
+    @javafx.fxml.FXML
+    private Label fileNameLabel;
     @javafx.fxml.FXML
     private Button mainMenuButton;
     @javafx.fxml.FXML
+    private ImageView imageView;
+    @javafx.fxml.FXML
+    private Button chooseFileButton;
+    @javafx.fxml.FXML
     private WebView webView;
-    @javafx.fxml.FXML
-    private Button previousPageButton;
-    @javafx.fxml.FXML
-    private Button nextPageButton;
 
     private Parent root;
     private Stage stage;
@@ -33,34 +42,31 @@ public class PrimeNumbers implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        File htmlFile = new File("src/main/java/com/main/htmlFiles/primeNumbers.html");
+        File htmlFile = new File("src/main/java/com/main/htmlFiles/simpleAlgorithmsTestPage.html");
         webView.getEngine().load(htmlFile.toURI().toString());
     }
 
     @javafx.fxml.FXML
-    public void goToPreviousPage(Event event) {
-    }
-
-    @javafx.fxml.FXML
-    public void goToNextPage(Event event) {
+    public void chooseFile(ActionEvent actionEvent) {
+        var inputFile = Utils.chooseFile();
+        fileNameLabel.setText(inputFile.getName());
+        if (!inputFile.isFile() || !inputFile.exists()) {
+            imageView.setImage(Utils.getCross());
+        } else {
+            Testers.setFile(inputFile);
+            Testers.setMethodName("druheNejvetsiCislo");
+            if (TestRunner.test(SecondBiggestNumberInArray.class)) {
+                imageView.setImage(Utils.getTik());
+            } else {
+                imageView.setImage(Utils.getCross());
+            }
+        }
     }
 
     @javafx.fxml.FXML
     public void goToMainMenu(Event event) {
         try {
             root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("mainMenu.fxml")));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void goToTestPage(Event event) {
-        try {
-            root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("primeNumbersTestPage.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
