@@ -106,10 +106,28 @@
     </p>
     <p>
         Algoritmus tak bude metoda vracící zmíněné pole booleanů. Na začátku metody ho vytvoříme <b>o délce n + 1</b>,
-        abychom otestovali a zahrnuli do výsledku i samotné číslo n.
+        abychom otestovali a zahrnuli do výsledku i samotné číslo n. Dále toto pole zaplníme hodnotami <b>true</b>. Nyní
+        přichází samotné jádro algoritmu. Algoritmus prochází pole booleanů a když nalezne hodnotu, která je <i>true</i>.
+        Poté vyškrtá (nastaví na false) všechny násobky čísla, které odpovídá indexu nynější hodnoty. Tzn. když bude
+        testovat hodnotu na indexu 2, pak nastaví na false všechny hodnoty na indexech <= n (4, 6, 8, ..., n). Tímto
+        způsobem pokračuje algoritmus až do <b>druhé odmocniny z n</b> stejně jako u algoritmu na test prvočíselnosti.
     </p>
     <img src="../../../../../../src/img/eratosthenovoSito.png"
          alt="algoritmus nasobky z intervalu" width="auto" height="500"/>
+
+    <hr>
+    <h2><b>PRVOČÍSELNÝ ROZKLAD</b></h2>
+    <p>
+        Prvočíselý rozkad znamená, že číslo n potřebujeme vyjádřit součinem jeho prvočinitelů. Například číslo <b>30</b>
+        bychom rozložili na <b>2 * 3 * 5</b>. Je možné na začátku rozkladu ještě připsat (1 * ...), ale v tom případě by
+        se nás následující program zacyklil. Mimo jiné je číslo 1 prvočinitelem všech přirozených čísel, tak ho nemusíme
+        vypisovat. Budeme předpokládat, že prvočinitele budeme pouze vypisovat. Algoritmus pak funguje na jednoduchém
+        principu. Dostane na vstupu číslo n, které má rozložit. Poté ho zkouší dělit postupně všemi čísly. Pokud je
+        dělení beze zbytku, pak ho vypíše do konzole. A pokračuje dělení stejným číslem, dokud to lze. V opačném případě
+        pokračuje test dělitelnosti s číslem o 1 větší, než byl předchozí dělitel.
+    </p>
+    <img src="../../../../../../src/img/prvociselnyRozklad.png"
+         alt="algoritmus nasobky z intervalu" width="auto" height="300"/>
 </div>
 </body>
 </html>
