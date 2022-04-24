@@ -10,7 +10,7 @@ public class CteniZeVstupu {
         int[] arr = new int[2];
         arr[0] = -1; // reprezentuje minimum
         arr[1] = -1; // reprezentuje maximum
-        int cislo = -1;
+        int cislo;
 
         try (Scanner scanner = new Scanner(file, StandardCharsets.UTF_8)) {
             if (scanner.hasNext()) {
