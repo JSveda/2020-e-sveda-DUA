@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="cz">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/HTMLStylesheets.css">
+</head>
+<body>
+<div>
+    <h1>MATICE</h1>
+</div>
+<div id="mainParagraph">
+    <p>
+        V této kapitole se podíváme na základní operace s maticemi.
+    </p>
+
+    <hr>
+    <h2><b>ZÁKLADNÍ POZNATKY</b></h2>
+    <p>
+        <b>Matice</b> je v programování reprezentována dvojrozměrným polem, jehož první rozměr reprezentuje <b>x</b>
+        souřadnici matice (řádky) a druhý rozměr reprezentuje <b>y</b> souřadnici matice (sloupce). Šířku matice
+        označujeme písmenem <b>n</b> a výšku matice písmenem <b>m</b>.
+    </p>
+    <p>
+        <b>Hlavní diagonála matice</b> je pomyslná úholpříčka vedoucí z prvku [0, 0] do prvku [n-1, m-1].
+    </p>
+    <p>
+        <b>Vedlejší diagonála matice</b> je pomyslná úholpříčka vedoucí z prvku [n-1; 0] do prvku [0; m-1].
+    </p>
+    <p>
+        <b>Transpozice</b>
+    </p>
+
+    <hr>
+    <h2><b>ALGORITMY MATIC</b></h2>
+    <h3><u>Součet prvků v matici</u></h3>
+    <p>
+        Součet prvků v matici lze udělat v čase <b>O(n<sup>2</sup>)</b>. Procházíme pole po x souřadnici. Při tom
+        procházíme také y souřadnici matice. V tomto průchodu do počítadla přidáváme hodnoty v matici na aktuálních
+        indexech. Na konci programu vrátí metoda zmíněné počítadlo.
+    </p>
+    <img src="../../../../../img/soucetPrvkuMatice.png"
+         alt="Součet prvků v matici" width="auto" height="400"/>
+
+    <h3><u>Součet prvků na hlavní diagonále</u></h3>
+    <p>
+        Součet prvků na hlavní diagonále matice lze udělat v lineárním čase <b>O(n)</b>. Procházíme pole do šířky a do
+        počítadla vkládáme hodnotu na pozicíh [i; i] - <i>viz obrázek</i>.
+    </p>
+    <img src="../../../../../img/soucetPrvkuNaHlavniDiagonale.png"
+         alt="Součet prvků na hlavní diagonále" width="auto" height="400"/>
+
+    <h3><u>Transpozice matice</u></h3>
+    <p>
+        Tento algoritmus má kvadratickou asymptotickou složitost <b>O(n<sup>2</sup>)</b>. Algoritmus prochází matici do
+        šířky. Zároveň do hloubky do aktuální x souřadnice. Proběhne výměna prvků [i; j] <=> [j; i] a program pokračuje
+        dále.
+    </p>
+    <img src="../../../../../img/transpoziceMatice.png"
+         alt="Transpozice matice" width="auto" height="400"/>
+</div>
+</body>
+</html>

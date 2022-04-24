@@ -38,11 +38,6 @@
                   <Label fx:id="arraySorting" onMouseClicked="#goToArraySorting" styleClass="title" text="ŘAZENÍ DAT V POLI" textAlignment="JUSTIFY" />
                   <Label fx:id="matrixAlgorithms" onMouseClicked="#goToMatrixAlgorithms" styleClass="title" text="MATICE" textAlignment="JUSTIFY" />
                   <Label fx:id="calendarAlgorithms" onMouseClicked="#goToCalendarAlgorithms" styleClass="title" text="KALENDÁŘ" textAlignment="JUSTIFY" />
-                  <Label fx:id="bigIntegers" onMouseClicked="#goToBigIntegers" styleClass="title" text="DLOUHÁ ČÍSLA" textAlignment="JUSTIFY" />
-                  <Label fx:id="polynomialAlgorithms" onMouseClicked="#goToPolynomialAlgorithms" styleClass="title" text="POLYNOMY" textAlignment="JUSTIFY" />
-                  <Label fx:id="abstractDataType" onMouseClicked="#goToAbstractDataTypes" styleClass="title" text="ABSTRAKTNÍ DATOVÉ TYPY" textAlignment="JUSTIFY" />
-                  <Label fx:id="binarySearchingTree" alignment="TOP_RIGHT" onMouseClicked="#goToBinarySearchingTree" prefHeight="20.0" prefWidth="320.0" styleClass="title" text="BINÁRNÍ VYHLEDÁVACÍ STROM" textAlignment="JUSTIFY" />
-                  <Label fx:id="directKeyIndexing" minWidth="-Infinity" onMouseClicked="#goToDirectKeyIndexing" prefHeight="20.0" prefWidth="179.0" styleClass="title" text="PŘÍMÁ INDEXACE KLÍČE" textAlignment="JUSTIFY" translateX="11.0" />
                </children>
                <HBox.margin>
                   <Insets bottom="15.0" left="15.0" right="15.0" top="20.0" />

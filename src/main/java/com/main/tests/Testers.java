@@ -46,6 +46,29 @@ public class Testers {
         return response;
     }
 
+    public static int getMethodResult(int[][] request) {
+        int response = -1;
+        setDefaultPath();
+        if (!clonAndCompileFile())
+            return -1;
+
+        try (URLClassLoader loader = new URLClassLoader(new URL[]{classFileRootDir.toURI().toURL()})) {
+            // Load and run class method
+            String packageName = "com.main.filesToTest." + fileName;
+            Class<?> cls = loader.loadClass(packageName);
+            Method method = cls.getMethod(methodName, int[][].class);
+            // set response by invoking the extracted method
+            response = (int) method.invoke(null, (Object) request);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        reset();
+        System.out.println("\nresponse: " + response);
+        return response;
+    }
+
     public static ArrayList<Integer> getMethodResult(int request) {
         ArrayList<Integer> response = new ArrayList<>();
         setDefaultPath();

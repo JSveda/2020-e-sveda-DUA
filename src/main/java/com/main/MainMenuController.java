@@ -19,6 +19,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.LinkedHashMap;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -47,11 +48,7 @@ public class MainMenuController implements Initializable {
     @FXML
     private Label eukleidAlgorithm;
     @FXML
-    private Label binarySearchingTree;
-    @FXML
     private Label arraySorting;
-    @FXML
-    private Label abstractDataType;
     @FXML
     private Label arraySearching;
     @FXML
@@ -61,15 +58,9 @@ public class MainMenuController implements Initializable {
     @FXML
     private Label primeNumbers;
     @FXML
-    private Label directKeyIndexing;
-    @FXML
     private Label matrixAlgorithms;
     @FXML
-    private Label polynomialAlgorithms;
-    @FXML
     private Label simpleAlgorithms;
-    @FXML
-    private Label bigIntegers;
     @FXML
     private Label calendarAlgorithms;
 
@@ -83,55 +74,42 @@ public class MainMenuController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         LinkedHashMap<String, String> items = new LinkedHashMap<>();
         items.put("ZÁKLADY ALGORITMŮ", "algorithmBasics.fxml");
-        items.put("Efektivita a složitost", "");
-        items.put("Asymptotická časová složitost", "");
+        items.put("Efektivita a složitost", "algorithmBasics.fxml");
+        items.put("Asymptotická časová složitost", "algorithmBasics.fxml");
         items.put("JEDNODUCHÉ ALGORITMY", "simpleAlgorithms.fxml");
-        items.put("Dělitelnost", "");
-        items.put("Práce s polem", "");
-        items.put("Intervaly a velikosti proměnných", "");
-        items.put("Modulo operace", "");
+        items.put("Dělitelnost", "simpleAlgorithms.fxml");
+        items.put("Práce s polem", "simpleAlgorithms.fxml");
+        items.put("Intervaly a velikosti proměnných", "simpleAlgorithms.fxml");
+        items.put("Modulo operace", "simpleAlgorithms.fxml");
         items.put("EUKLEIDŮV ALGORITMUS", "eukleidAlgorithm.fxml");
-        items.put("Největší společný dělitel", "");
-        items.put("Nejmenší společný násobek", "");
+        items.put("Největší společný dělitel", "eukleidAlgorithm.fxml");
+        items.put("Nejmenší společný násobek", "eukleidAlgorithm.fxml");
         items.put("PRVOČÍSELNOST", "primeNumbers.fxml");
-        items.put("Test prvočíselnosti", "");
-        items.put("Eratosthenovo síto", "");
-        items.put("Prvočíselný rozklad", "");
+        items.put("Test prvočíselnosti", "primeNumbers.fxml");
+        items.put("Eratosthenovo síto", "primeNumbers.fxml");
+        items.put("Prvočíselný rozklad", "primeNumbers.fxml");
         items.put("VYHLEDÁVÁNÍ V POLI", "arraySearching.fxml");
-        items.put("Sekvenční vyhledávání", "");
-        items.put("Sekvenční vyhledávání se zarážkou", "");
-        items.put("Binární vyhledávání", "");
+        items.put("Sekvenční vyhledávání", "arraySearching.fxml");
+        items.put("Sekvenční vyhledávání se zarážkou", "arraySearching.fxml");
+        items.put("Binární vyhledávání", "arraySearching.fxml");
         items.put("ZPRACOVÁNÍ DAT ZE VSTUPU", "inputDataProcessing.fxml");
-        items.put("Příklady algoritmů data ze vstupu", "");
+        items.put("Příklady algoritmů data ze vstupu", "inputDataProcessing.fxml");
         items.put("ZPRACOVÁNÍ DAT V POLI", "arrayDataProcessing.fxml");
-        items.put("Cyklický posun prvků v poli", "");
-        items.put("Srovnání čísel do kategorií", "");
-        items.put("Počet různých hodnot v poli", "");
+        items.put("Cyklický posun prvků v poli", "arrayDataProcessing.fxml");
+        items.put("Srovnání čísel do kategorií", "arrayDataProcessing.fxml");
+        items.put("Počet různých hodnot v poli", "arrayDataProcessing.fxml");
         items.put("ŘAZENÍ DAT V POLI", "arraySorting.fxml");
-        items.put("Select sort", "");
-        items.put("Insert sort", "");
-        items.put("Bubble sort", "");
-        items.put("Merge sort", "");
+        items.put("Select sort", "arraySorting.fxml");
+        items.put("Insert sort", "arraySorting.fxml");
+        items.put("Bubble sort", "arraySorting.fxml");
+        items.put("Merge sort", "arraySorting.fxml");
         items.put("Vnější třídění", "");
         items.put("MATICE", "matrixAlgorithms.fxml");
-        items.put("Příklady algoritmů matic", "");
-        items.put("Pojmy", "");
+        items.put("Pojmy", "matrixAlgorithms.fxml");
+        items.put("Příklady algoritmů matic", "matrixAlgorithms.fxml");
         items.put("KALENDÁŘ", "calendarAlgorithms.fxml");
-        items.put("Přestupnost roku", "");
-        items.put("Příklady algoritmů kaledáře", "");
-        items.put("DLOUHÁ ČÍSLA", "bigIntegers.fxml");
-        items.put("Příklady algoritmů dlouhých čísel", "");
-        items.put("POLYNOMY", "polynomialAlgorithms.fxml");
-        items.put("Hornerovo schéma", "");
-        items.put("Převody číselných soustav", "");
-        items.put("ABSTRAKTNÍ DATOVÉ TYPY", "abstractDataTypes.fxml");
-        items.put("Zásobník", "");
-        items.put("Fronta", "");
-        items.put("Halda", "");
-        items.put("BINÁRNÍ VYHLEDÁVACÍ STROM", "binarySearchingTree.fxml");
-        items.put("Vyvažování BVS", "");
-        items.put("PŘÍMÁ INDEXACE KLÍČE", "directKeyIndexing.fxml");
-        items.put("Hešování", "");
+        items.put("Přestupnost roku", "calendarAlgorithms.fxml");
+        items.put("Příklady algoritmů kaledáře", "calendarAlgorithms.fxml");
 
 
         FileOutputStream f = null;
@@ -182,16 +160,6 @@ public class MainMenuController implements Initializable {
     }
 
     @FXML
-    public void goToPolynomialAlgorithms(Event event) {
-        pathList.scrollTo("POLYNOMY");
-    }
-
-    @FXML
-    public void goToBinarySearchingTree(Event event) {
-        pathList.scrollTo("BINÁRNÍ VYHLEDÁVACÍ STROM");
-    }
-
-    @FXML
     public void goToMatrixAlgorithms(Event event) {
         pathList.scrollTo("MATICE");
     }
@@ -212,11 +180,6 @@ public class MainMenuController implements Initializable {
     }
 
     @FXML
-    public void goToAbstractDataTypes(Event event) {
-        pathList.scrollTo("ABSTRAKTNÍ DATOVÉ TYPY");
-    }
-
-    @FXML
     public void goToArraySorting(Event event) {
         pathList.scrollTo("ŘAZENÍ DAT V POLI");
     }
@@ -224,16 +187,6 @@ public class MainMenuController implements Initializable {
     @FXML
     public void goToPrimeNumbers(Event event) {
         pathList.scrollTo("PRVOČÍSELNOST");
-    }
-
-    @FXML
-    public void goToDirectKeyIndexing(Event event) {
-        pathList.scrollTo("PŘÍMÁ INDEXACE KLÍČE");
-    }
-
-    @FXML
-    public void goToBigIntegers(Event event) {
-        pathList.scrollTo("DLOUHÁ ČÍSLA");
     }
 
     @FXML
