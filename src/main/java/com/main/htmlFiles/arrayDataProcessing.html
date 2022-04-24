@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="cz">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/HTMLStylesheets.css">
+</head>
+<body>
+<div>
+    <h1>ZPRACOVÁNÍ DAT V POLI</h1>
+</div>
+<div id="mainParagraph">
+    <p>
+        V této kapitole se podíváme na základní techniky při práci s daty, které program dostane v poli.
+    </p>
+
+    <hr>
+    <h2><b>ROZDĚLENÍ ALGORITMŮ</b></h2>
+    <p>
+        Dříve, než se pustíme do tvoření algoritmů, je nutné si uvědomit, jakým způsobem tyto algoritmy vlastně
+        rozdělujeme z hlediska paměťových nároků.
+    </p>
+    <p>
+        Algoritmy můžeme rozdělit do dvou základních kategorií na:
+    </p>
+    <ol>
+        <li>
+            ON SITE ALGORITMY
+        </li>
+        <li>
+            ALGORITMY, KTERÉ NEPRACUJÍ ON SITE
+        </li>
+    </ol>
+    <p>
+        <b>On site algoritmy</b> zpracovávají data v poli bez využití dalších polí/seznamů, do kterých mezivýpočty
+        ukládají.
+    </p>
+    <p>
+        <b>Algoritmy nepracující on site</b> využívají k práci s daty další datové struktury. Jsou zcela jistě
+        náročnější na paměť, za to však na úkor paměti ušetří leckdy spousty výpočtů navíc.
+    </p>
+
+    <hr>
+    <h2><b>CYKLICKÝ POSUN PRVKŮ</b></h2>
+    <p>
+        Tento algoritmus v hlavičce metody dostává pole, ve kterém chceme prvky posunout. Pro prvotní pochopení budeme
+        předpokládat, že máme posunout prvky o jednu pozici dopředu. Poslední prvek se logicky přesune na začátek pole.
+        V této verzi bude mít algoritmus asymptotickou časovou složitost <b>O(n)</b>. Algoritmus vyjme poslední prvek
+        pole a následně jedním cyklem projde od druhého posledního prvku pole a nastaví jeho hodnotu na prvek pole za
+        sebou. Nakonec na začátku vyjmutý prvek vloží na první pozici pole.
+    </p>
+    <img src="../../../../../img/posunJednouDopredu.png"
+         alt="Posun o 1 dopredu" width="auto" height="400"/>
+    <p>
+        Pokud bychom chtěli vytvořit obecnější algoritmus, který by dokázal posunout prvek o libovolný počet kroků
+        dopředu, je důležité si uvědomit změnu časové složitosti. Dala by se vytvořit metoda, jež posun o 1 provede
+        tolikrát, kolikrát uživatel zadá v parametru typu int. Pak by algoritmus mohl mít asymptotickou časovou
+        složitost <b>O(n<sup>2</sup>), O(n<sup>3</sup>), O(n<sup>4</sup>), ...</b>. Záleželo by na počtu kroků, které
+        algoritmus provede dle vstupu uživatele. Mohlo by se totiž stát, že uživatel zadá číslo větší, než je počet
+        prvků v poli. Proto je potřeba toto ošetřit a zkrátit tak maximální časovou složitost jen na <b>O(n<sup>2</sup>)</b>.
+        Lze to zajistit tím, že provedeme modulo operaci počtu kroků od uživatele délkou vstupního pole. Pak by
+        algoritmus mohl vypadat takto:
+    </p>
+    <img src="../../../../../img/posunDopredu.png"
+         alt="Posun libovolně dopředu" width="auto" height="400"/>
+    <p>
+        Všimněme si, že je algoritmus v paměti stále využívá stejné místo v paměti pro práci s polem, ale neklonuje ho
+        pro každé volání metody.
+    </p>
+    <p>
+        Pokud bychom chtěli vytvořit algoritmus, který bude posouvat prvky dozadu, bude fungovat velice podobně. Ze
+        začátku však vyjme první prvek a pole bude procházet zepředu od druhého prvku a prvky bude dávat na index za
+        sebou. Na konci před vrácením pole vyjmutý prvek umístí na poslední pozici pole.
+    </p>
+
+    <hr>
+    <h2><b>TŘÍZENÍ HODNOT V POLI DO KATEGORIÍ</b></h2>
+    <p>
+        Představme si, že jsme dostali pole a máme roztřídit hodnoty z leva na lichá a sudá čísla. K takovému úkolu lze
+        použít takzvanou metodu dvou ukazovátek. Jeden cyklus (první ukazovátko) prochází pole zleva a kontroluje, zda
+        jsou čísla lichá. To rozhodne na základě výpočtu <i>(arr[i] % 2 != 0)</i>. Pokud tato podmínka platí, apk je
+        číslo liché. Když narazí na liché číslo, počká na druhé ukazovátko. Druhý cyklus (druhé ukazovátko) prochází
+        pole od zprava a kontroluje, zda jsou čísla sudá <i>(arr[j] % 2 == 0)</i>. Pokud podmínka neplatí, pak počká na
+        první ukazovátko.
+    </p>
+    <p>
+        Když na sebe obě ukazovátka čekají, vymění si hodnoty na svých indexech a pokračují dál ve svých kontrolách.
+        Pokračují do doby, dokud nekontrolují číslo na stejném indexu v poli. Tzn. dokud se obě ukazovátka nepotkají.
+        Algoritmus má časovou složitost <b>O(n)</b>.
+    </p>
+    <p>
+        Pokud máme setřídit tímto způsobem více kategorií, pak roztřídím roztřídíme nejdříve kategorii, jež má být
+        nejvíce vlevo se zbytkem vpravo. Následně třídíme již setřízenou kategorii a novou s ostatními vpravo.
+    </p>
+
+    <hr>
+    <h2><b>POČET RŮZNÝCH HODNOT V POLI</b></h2>
+</div>
+</body>
+</html>

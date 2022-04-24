@@ -2,37 +2,7 @@
 <html lang="cz">
 <head>
     <meta charset="UTF-8">
-    <style>
-        :root {
-            --darkBlue: rgb(11, 20, 37);
-            --lightBlue: rgb(20, 65, 210);
-            --yellow: rgb(251, 191, 57);
-        }
-
-        body {
-            background-color: var(--darkBlue);
-            color: var(--yellow);
-        }
-
-        h1 {
-            background: var(--lightBlue);
-            border: solid 1px var(--lightBlue);
-            border-radius: 30px;
-            text-align: center;
-            padding: 10px;
-            margin: 5px 15px 5px 5px;
-        }
-
-        p {
-            text-align: justify;
-        }
-
-        #mainParagraph {
-            padding: 10px 30px;
-            margin-right: 10px;
-        }
-
-    </style>
+    <link rel="stylesheet" href="../css/HTMLStylesheets.css">
 </head>
 <body>
 <div>
@@ -74,7 +44,7 @@
     <p>
         Takový algoritmus můžeme zapsat následovně:
     </p>
-    <img src="../../../../../../src/img/jePrvocislo.png"
+    <img src="../../../../../img/jePrvocislo.png"
          alt="algoritmus nasobky z intervalu" width="auto" height="450"/>
     <p>
         Jako vždy i tento algoritmus není ještě dokonalý. Zkusme se podívat například na odmocninu, kterou počítáme.
@@ -94,7 +64,7 @@
     <p>
         Zbytek stávajícího algoritmu se již nezmění a tak nakonec může jeho finální verze vypadat takto:
     </p>
-    <img src="../../../../../../src/img/jePrvocisloLepe.png"
+    <img src="../../../../../img/jePrvocisloLepe.png"
          alt="algoritmus nasobky z intervalu" width="auto" height="450"/>
 
     <hr>
@@ -112,7 +82,7 @@
         testovat hodnotu na indexu 2, pak nastaví na false všechny hodnoty na indexech <= n (4, 6, 8, ..., n). Tímto
         způsobem pokračuje algoritmus až do <b>druhé odmocniny z n</b> stejně jako u algoritmu na test prvočíselnosti.
     </p>
-    <img src="../../../../../../src/img/eratosthenovoSito.png"
+    <img src="../../../../../img/eratosthenovoSito.png"
          alt="algoritmus nasobky z intervalu" width="auto" height="500"/>
 
     <hr>
@@ -126,7 +96,7 @@
         dělení beze zbytku, pak ho vypíše do konzole. A pokračuje dělení stejným číslem, dokud to lze. V opačném případě
         pokračuje test dělitelnosti s číslem o 1 větší, než byl předchozí dělitel.
     </p>
-    <img src="../../../../../../src/img/prvociselnyRozklad.png"
+    <img src="../../../../../img/prvociselnyRozklad.png"
          alt="Prvočíselný rozklad" width="auto" height="300"/>
 </div>
 </body>

@@ -2,37 +2,7 @@
 <html lang="cz">
 <head>
     <meta charset="UTF-8">
-    <style>
-        :root {
-            --darkBlue: rgb(11, 20, 37);
-            --lightBlue: rgb(20, 65, 210);
-            --yellow: rgb(251, 191, 57);
-        }
-
-        body {
-            background-color: var(--darkBlue);
-            color: var(--yellow);
-        }
-
-        h1 {
-            background: var(--lightBlue);
-            border: solid 1px var(--lightBlue);
-            border-radius: 30px;
-            text-align: center;
-            padding: 10px;
-            margin: 5px 15px 5px 5px;
-        }
-
-        p {
-            text-align: justify;
-        }
-
-        #mainParagraph {
-            padding: 10px 30px;
-            margin-right: 10px;
-        }
-
-    </style>
+    <link rel="stylesheet" href="../css/HTMLStylesheets.css">
 </head>
 <body>
 <div>
@@ -52,12 +22,12 @@
         největší asymptotická složitost bude <b>O(n)</b>, kde <b>n</b> značí počet prvků v poli. Složitost tak bude
         lineární. Takový algoritmus vypadá následovně:
     </p>
-    <img src="../../../../../../src/img/najdiCisloSekvencne.png"
+    <img src="../../../../../img/najdiCisloSekvencne.png"
          alt="Algoritmus nasobky z intervalu" width="auto" height="350"/>
     <p>
         Obdobně lze vytvořit stejný algoritmus, ale pomocí <b>while smyčky</b>.
     </p>
-    <img src="../../../../../../src/img/najdiCisloSekvencneWhileLoop.png"
+    <img src="../../../../../img/najdiCisloSekvencneWhileLoop.png"
          alt="Algoritmus nasobky z intervalu" width="auto" height="300"/>
 
     <hr>
@@ -71,7 +41,7 @@
         nevyskytuje. Takovýto algoritmus má také asymptotickou časovou složitost <b>O(n)</b>, kde <b>n</b> je počet
         prvků v poli. Vypadá potom takto:
     </p>
-    <img src="../../../../../../src/img/najdiCisloSekvencneSeZarazkou.png"
+    <img src="../../../../../img/najdiCisloSekvencneSeZarazkou.png"
          alt="Algoritmus nasobky z intervalu" width="auto" height="350"/>
 
     <hr>
@@ -86,7 +56,7 @@
         -1</i></b><br>Je důležité podotknout, že rovnat pole, abychom v něm mohli binárně vyhledávat, se zcela jistě
         nevyplatí. To proto, že srovnání pole dokážeme v nejlepším případě dosáhnout v čase <b>O(n * log n)</b>.
     </p>
-    <img src="../../../../../../src/img/najdiCisloBinarnimVyhledavanim.png"
+    <img src="../../../../../img/najdiCisloBinarnimVyhledavanim.png"
          alt="Algoritmus nasobky z intervalu" width="auto" height="500"/>
 </div>
 </body>

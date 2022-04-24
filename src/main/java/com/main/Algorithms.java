@@ -56,7 +56,8 @@ public class Algorithms {
         //System.out.println(soucetPrvkuPodHlavniDiagonalouMatice(new int[][] {{1, 2, 3}, {2, 4, 6}}));
         //System.out.println(Arrays.toString(getZitra(31, 12, 2000)));
         //System.out.println(Arrays.toString(arrayReverse(new int[] {1, 2, 3, 4, 5, 6})));
-        System.out.println(1000 % 3);
+        //System.out.println(1000 % 3);
+        System.out.println(Arrays.toString(posunPrvkuDopredu(new int[] {1, 2, 3}, 4)));
     }
 
     /*
@@ -758,7 +759,7 @@ public class Algorithms {
      * @param arr the arr
      * @return the int [ ]
      */
-    public static int[] posunPrvkuPole1Dopedu(int[] arr) {
+    public static int[] posunPrvkuPole1Dopredu(int[] arr) {
         int posledniPrvek = arr[arr.length - 1];
         for (int i = arr.length - 2; i >= 0; i--) {
             arr[i + 1] = arr[i];
@@ -782,6 +783,16 @@ public class Algorithms {
         }
 
         arr[arr.length - 1] = prvniPrvek;
+
+        return arr;
+    }
+
+    public static int[] posunPrvkuDopredu(int[] arr, int pocetKroku) {
+        pocetKroku %= arr.length;
+        for (int i = 1; i <= pocetKroku; i++) {
+            System.out.println(i);
+            posunPrvkuPole1Dopredu(arr);
+        }
 
         return arr;
     }
