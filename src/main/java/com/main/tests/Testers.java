@@ -23,6 +23,8 @@ public class Testers {
     static File classFile;
     private static String methodName;
 
+    private static int counter = 0;
+
     public static int getMethodResult(int[] request) {
         int response = -1;
         setDefaultPath();
@@ -42,7 +44,32 @@ public class Testers {
 
 
         reset();
-        System.out.println("\nresponse: " + response);
+        return response;
+    }
+
+    public static int[] getMethodResult(int request1, int request2, int request3) {
+        counter++;
+        int[] response = null;
+        setDefaultPath();
+        if (!clonAndCompileFile())
+            return null;
+
+        try (URLClassLoader loader = new URLClassLoader(new URL[]{classFileRootDir.toURI().toURL()})) {
+            // Load and run class method
+            String packageName = "com.main.filesToTest." + fileName;
+            Class<?> cls = loader.loadClass(packageName);
+            Method method = cls.getMethod(methodName, int.class, int.class, int.class);
+            // set response by invoking the extracted method
+            response = (int[]) method.invoke(null, request1, request2, request3);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        if (counter == 3) {
+            counter = 0;
+            reset();
+        }
+
         return response;
     }
 
@@ -65,7 +92,6 @@ public class Testers {
 
 
         reset();
-        System.out.println("\nresponse: " + response);
         return response;
     }
 
@@ -86,7 +112,6 @@ public class Testers {
             e.printStackTrace();
         }
         reset();
-        System.out.println("\nresponse: " + response);
         return response;
     }
 
@@ -129,7 +154,6 @@ public class Testers {
         }
 
         reset();
-        System.out.println("\nresponse: " + Arrays.toString(response));
         return response;
     }
 
@@ -140,6 +164,7 @@ public class Testers {
     public static void setMethodName(String methodName) {
         Testers.methodName = methodName;
     }
+
     private static void setDefaultPath() {
         Testers.defaultPath = "src/main/java/com/main/filesToTest/";
         Testers.fileName = "";
@@ -150,6 +175,8 @@ public class Testers {
         System.out.println((classFile.delete()) ? (classFile.getPath() + " deleted") : "Delete failed");
         Testers.file = null;
         Testers.methodName = null;
+
+
         Testers.fileName = null;
     }
 

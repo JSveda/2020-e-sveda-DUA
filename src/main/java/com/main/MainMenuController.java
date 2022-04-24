@@ -109,7 +109,7 @@ public class MainMenuController implements Initializable {
         items.put("Příklady algoritmů matic", "matrixAlgorithms.fxml");
         items.put("KALENDÁŘ", "calendarAlgorithms.fxml");
         items.put("Přestupnost roku", "calendarAlgorithms.fxml");
-        items.put("Příklady algoritmů kaledáře", "calendarAlgorithms.fxml");
+        items.put("Kalendářové algoritmy", "calendarAlgorithms.fxml");
 
 
         FileOutputStream f = null;

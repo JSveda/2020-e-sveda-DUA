@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="cz">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/HTMLStylesheets.css">
+</head>
+<body>
+<div>
+    <h1>KALENDÁŘ</h1>
+</div>
+<div id="mainParagraph">
+    <p>
+        V poslední kapitole se podíváme na základní algoritmy kalendáře.
+    </p>
+
+    <hr>
+    <h2><b>PŘESTUPNOST ROKU</b></h2>
+    <p>
+        Přestupný rok je ve dvou případech:
+    </p>
+    <ol>
+        <li>
+            Celá století jsou beze zbytku dělitelný <b>číslem 400</b>.
+        </li>
+        <br>
+        <li>
+            Rok je beze zbytku dělitelný <b>číslem 4</b>.
+        </li>
+    </ol>
+    <p>
+        Napíšeme tedy metodu, která bude <b>vracet boolean</b> vypovídající o tom, zda rok, jež dostal program v
+        hlavičce
+        metody, je přestupný.
+    </p>
+    <img src="../../../../../img/jePrestupny.png"
+         alt="Je rok přestupný?" width="auto" height="300"/>
+
+    <hr>
+    <h2><b>KALENDÁŘOVÉ ALGORITMY</b></h2>
+    <p>
+        V kalendářových algoritmech většinou používáme globální pole měsíců v roce. To definujeme takto:
+    </p>
+    <p>
+        <b>int unor = <i>jePrestupny(rok) ? 29 : 28;</i></b>
+        <br>
+        <b>int mesice = new int[] {0, 31, unor, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};</b>
+    </p>
+    <p>
+        Nula v prvním prku pole je proto, abychom nemuseli řešit indexaci pole od 0, když chceme dostat prvek z pole na
+        určitém indexu.
+    </p>
+
+    <h3><u>Zítřejší den</u></h3>
+    <p>
+        Nyní napíšeme algoritmus, který bude vracet zítřejší datum vzhledem ke dni z hlavičky metody. Pro zjednodušení
+        bude vracet hodnotu <i>int, int, int</i> reprezentující <i>den, měsíc a rok</i>. Nejdříve metoda ověří, zda se
+        nemění měsíc. Když ne, pak vypíše stejné datum s dnem, který má o 1 větší hodnotu. Dále se podívá, jestli se
+        nemění rok, když se mění měsíc. Pokud ano, pak vrátí datum 1, 1 s rokem o 1 větším. Následně vrátí datum 1, s
+        měsícem o 1 větším a stejný rok.
+    </p>
+    <img src="../../../../../img/zitra.png"
+         alt="Zítřejší den" width="auto" height="350"/>
+</div>
+</body>
+</html>
