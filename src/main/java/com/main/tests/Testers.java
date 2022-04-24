@@ -67,11 +67,11 @@ public class Testers {
         return response;
     }
 
-    public static int getMethodResult(int[] request1, int request2) {
-        int response = -1;
+    public static <T> T getMethodResult(int[] request1, int request2) {
+        T response = null;
         setDefaultPath();
         if (!clonAndCompileFile())
-            return -1;
+            return null;
 
         try (URLClassLoader loader = new URLClassLoader(new URL[]{classFileRootDir.toURI().toURL()})) {
             // Load and run class method
@@ -79,13 +79,12 @@ public class Testers {
             Class<?> cls = loader.loadClass(packageName);
             Method method = cls.getMethod(methodName, int[].class, int.class);
             // set response by invoking the extracted method
-            response = (int) method.invoke(null, request1, request2);
+            response = (T) method.invoke(null, request1, request2);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         reset();
-        System.out.println("\nresponse: " + response);
         return response;
     }
 

@@ -1,11 +1,5 @@
 package com.main;
 
-import com.main.tests.ArrayDataProcessor;
-import com.main.tests.SecondBiggestNumberInArray;
-import com.main.tests.TestRunner;
-import com.main.tests.Testers;
-import com.main.tools.Utils;
-import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -13,8 +7,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
@@ -24,18 +16,15 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class ArrayDataProcessingTestPage implements Initializable {
-
-    @javafx.fxml.FXML
-    private Label fileNameLabel;
+public class ArraySorting implements Initializable {
     @javafx.fxml.FXML
     private Button mainMenuButton;
     @javafx.fxml.FXML
-    private ImageView imageView;
-    @javafx.fxml.FXML
-    private Button chooseFileButton;
-    @javafx.fxml.FXML
     private WebView webView;
+    @javafx.fxml.FXML
+    private Button previousPageButton;
+    @javafx.fxml.FXML
+    private Button nextPageButton;
 
     private Parent root;
     private Stage stage;
@@ -43,25 +32,16 @@ public class ArrayDataProcessingTestPage implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        File htmlFile = new File("src/main/java/com/main/htmlFiles/arrayDataProcessingTestPage.html");
+        File htmlFile = new File("src/main/java/com/main/htmlFiles/arraySorting.html");
         webView.getEngine().load(htmlFile.toURI().toString());
     }
 
     @javafx.fxml.FXML
-    public void chooseFile(ActionEvent actionEvent) {
-        var inputFile = Utils.chooseFile();
-        fileNameLabel.setText(inputFile.getName());
-        if (!inputFile.isFile() || !inputFile.exists()) {
-            imageView.setImage(Utils.getCross());
-        } else {
-            Testers.setFile(inputFile);
-            Testers.setMethodName("posunDozadu");
-            if (TestRunner.test(ArrayDataProcessor.class)) {
-                imageView.setImage(Utils.getTik());
-            } else {
-                imageView.setImage(Utils.getCross());
-            }
-        }
+    public void goToPreviousPage(Event event) {
+    }
+
+    @javafx.fxml.FXML
+    public void goToNextPage(Event event) {
     }
 
     @javafx.fxml.FXML

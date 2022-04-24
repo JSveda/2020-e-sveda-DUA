@@ -900,17 +900,17 @@ public class Algorithms {
     public static int[] bubbleSort(int[] arr) {
         boolean zmena = true;
         while (zmena) {
-            boolean nynejsiZmena = false;
+            boolean lokalniZmena = false;
             for (int i = 1; i < arr.length; i++) {
                 if (arr[i] < arr[i - 1]) {
                     int vymena = arr[i];
                     arr[i] = arr[i-1];
                     arr[i - 1] = vymena;
-                    nynejsiZmena = true;
+                    lokalniZmena = true;
                 }
             }
 
-            zmena = nynejsiZmena;
+            zmena = lokalniZmena;
         }
 
         return arr;

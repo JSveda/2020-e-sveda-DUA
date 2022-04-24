@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="cz">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/HTMLStylesheets.css">
+</head>
+<body>
+<div>
+    <h1>ŘAZENÍ DAT V POLI</h1>
+</div>
+<div id="mainParagraph">
+    <p>
+        V této kapitole se podíváme na základní techniky, jak setřídit pole čísel dle jejich velikosti.
+    </p>
+
+    <hr>
+    <h2><b>ROZDĚLENÍ ALGORITMŮ</b></h2>
+    <p>
+        Algoritmů, které řadí pole říkáme <b>třídící algoritmy</b>. Konkrétně se budeme bavit o algoritmech, jež dělají
+        <i>vnitřní třídění</i>, což znamená, že pracují v RAM paměti a nekombinují příjem dat přímo z pevného disku.
+        Existují tři základní metody třídících algoritmů.
+    </p>
+    <ol>
+        <li>
+            PŘÍMÉ METODY
+        </li>
+        <br>
+        <li>
+            RYCHLEJŠÍ OBECNÉ ALGORITMY
+        </li>
+        <br>
+        <li>
+            PŘIHRADKOVÉ METODY
+        </li>
+    </ol>
+    <p>
+        <b>Přímé metody</b> jsou ty nejjednodušší algoritmy, které mají kole 10 řádků kódu, jsou on site a jejich časová
+        složitost je kvadratická - <b>O(n<sup>2</sup>)</b>
+    </p>
+    <p>
+        <b>Rychlejší obecné algoritmy</b> jsou složitější (kolem 50 řádků kódu), ale jsou rychlejší. Jejich časová
+        složitost se pohybuje kolem <b>O(n * log n)</b>. Ke své práci potřebují další pole. Znovu se tedy setkáváme s
+        fenoménem, kdy algoritmus za cenu vyšší rychlosti obětuje paměť. Dnes je to způsob, který programátoři požadují,
+        neboť se již nesetkáváme s paměťovými nedostatky.
+    </p>
+    <p>
+        <b>Přihrádkové metody</b> jsou poměrně specifické algoritmy. Dosahují až lineární časové složitosti <b>O(n)</b>.
+        K jejich chodu je ale třeba znát urřité detaily o vstupních datech <i>např. zda to nejsou celá čísla nebo známe
+        jejich rozmezí</i>.
+    </p>
+
+    <hr>
+    <h2><b>SELECT SORT</b></h2>
+    <p>
+        Tento algoritmus patří do rodiny přímých metod. Jeho asymptotická časová složitost odpovídá <b>O(n<sup>2</sup>)</b>.
+        Funguje tak, že prochází pole, kde nalezne minimum a toto minimum vloží na začátek pole. Dále pokračuje v
+        hledání nového minima, ale začne s ověřováním až druhého prvku pole. Po nalezení umístí nové minimum na druhou
+        pozici a tekto pokračuje dále.
+    </p>
+    <img src="../../../../../img/selectSort.png"
+         alt="Select sort" width="auto" height="500"/>
+
+    <hr>
+    <h2><b>INSERT SORT</b></h2>
+    <p>
+        Tento algoritmus patří do rodiny přímých metod. Jeho asymptotická časová složitost odpovídá <b>O(n<sup>2</sup>)</b>.
+        Funguje tak, že od začátku prochází pole. Každou hodnotu, na kterou narazí, si vyzvedne a zařadí ji, kam dle
+        velikosti patří. Zařazení probíhá tak, že pole začne od konce procházet. Když najde číslo, které je větší než
+        vyzvednuté číslo, pak vyzvednuté číslo zařadí před číslo, se kterým bylo porovnáno.
+    </p>
+    <img src="../../../../../img/insertSort.png"
+         alt="Insert sort" width="auto" height="500"/>
+
+    <hr>
+    <h2><b>BUBBLE SORT</b></h2>
+    <p>
+        Tento algoritmus patří do rodiny přímých metod. Jeho asymptotická časová složitost odpovídá <b>O(n<sup>2</sup>)</b>.
+        Funguje tak, že od začátku prochází dvojice prvků v poli a kdykoli nejsou správně srovnané, tak je vymění. Takto
+        pokračuje do doby, kdy po průchodu celým polem neudělá výměnu.
+    </p>
+    <img src="../../../../../img/bubbleSort.png"
+         alt="Bubble sort" width="auto" height="550"/>
+
+    <hr>
+    <h2><b>MERGE SORT</b></h2>
+    <p>
+        Tento algoritmus patří do rodiny rychejších obecných algoritmů. Jeho asymptotická časová složitost odpovídá <b>O(n
+        * log n)</b>. Algoritmus postupně rozděluje pole na jednotlivé prvky a ty potom začne slévat (proto název merge
+        sort). Slévá je do většího pole <i>např. [1] a [2] by slil do pole [1, 2]</i>. Takto pokračuje dokud nesleje
+        celé pole a už nezbývají žádné prvky <i>tzn. [1, 2] a [3, 4] by slil do pole [1, 2, 3, 4], atd.</i>. Následující
+        ukázka je napsána rekurzivně, což je pro nás nový pojem. Znamená to, že metoda volá ve svém těle sama sebe. Dále
+        samotné pole nevrací, neboť se nevytváří kopie pole, pokud ho předáváme hlavičkou metody, ale pracuje se se
+        stejným kusem paměti.
+    </p>
+    <!--https://www.programiz.com/dsa/merge-sort -->
+    <img src="../../../../../img/mergeSort.png"
+         alt="Merge sort" width="auto" height="1100"/>
+
+    <hr>
+    <h2><b>VNĚJŠÍ TŘÍDĚNÍ</b></h2>
+    <p>
+        Vnější třídění je způsob, jak setřídit pole/čísla v souboru, když nemůžeme tato načíst do paměti RAM.
+        Nejefektivnějším a vhodným algoritmem je vnější merge sort. Ten třídí jednotlivé části, které načítáme do
+        paměti.
+    </p>
+    <p>
+        Pokud čteme z binárního souboru jednotlivé části, je nutné si dát pozor na seekování. To je jev, který se stává,
+        když čteme po jednotlivých hodnotách ze souboru nesekvenčním způsobem. Je to nevýhodné, protože když se načítá
+        jednotlivě do paměti z SSD/HDD disku, pak počítač najde celý sektor s daty. Z tohoto sektoru načte jednu hodnotu
+        a celý sektor zahodí. Naopak, když načteme větší část souboru, sektor je nalezen méněkrát. Ušetříme tak několik
+        poměrně zdlouhavých operací s pamětí.
+    </p>
+</div>
+</body>
+</html>

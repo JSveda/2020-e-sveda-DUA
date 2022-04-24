@@ -26,6 +26,7 @@
         <li>
             ON SITE ALGORITMY
         </li>
+        <br>
         <li>
             ALGORITMY, KTERÉ NEPRACUJÍ ON SITE
         </li>
@@ -94,6 +95,29 @@
 
     <hr>
     <h2><b>POČET RŮZNÝCH HODNOT V POLI</b></h2>
+    <p>
+        Pokud máme zjistit počet různých hodnot v poli, můžeme k tomuto úkolu přistoupit třemi základními způsoby.
+    </p>
+    <ol>
+        <li>
+            Můžeme procházet pole a stejné hodnoty vyškrtat (nastavit na null v případě objektů nebo s čísly na hodnotu,
+            která se v poli nemůže vyskytnout). Poté procházím pole znovu a pokračuji s první nalezenou hodnotou stejně.
+            Tímto postupen dosáhneme nejhůře asymptotické časové složitosti <b>O(n<sup>2</sup>)</b>.
+        </li>
+        <br>
+        <li>
+            Druhý způsob je procházení pole, kdy najdeme minimum. Při dalším opakování tohoto postupu hledáme nové
+            minimum. Mezi opakováními zvedáme počítadlo o 1. Na konci programu odpovídá hodnota počítadla počtu různých
+            hodnot. Tento způsob nám práci nijak neušetřil a je stejná jako předtím tzn. <b>O(n<sup>2</sup>)</b>
+        </li>
+        <br>
+        <li>
+            Třetí způsob již konečně ušetří část práce, dokáže totiž požadovanou hodnotu najít v čase <b>O(n * log
+            n)</b>. Vstupní pole nejdříve seřadíme dle velikosti, poté ho projdeme jedním cyklem a pokaždé, když
+            najdeme novou hodnotu, zvýšíme počítadlo o 1. Stejně jako v předchozím způsobu, i zde hodnata počítadla
+            odpovídá počtu různých hodnot v poli.
+        </li>
+    </ol>
 </div>
 </body>
 </html>
