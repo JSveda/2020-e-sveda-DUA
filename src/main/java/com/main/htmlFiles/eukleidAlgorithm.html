@@ -11,13 +11,13 @@
 <div id="mainParagraph">
     <p>
         Tento algoritmus pochází původně ze starověkého Řecka od tehdejšího filozofa Eukleida. Přestože tento algoritmus
-        uvedl ve svém díle Základy, není dodnes zcela jasné, kdo tento algoritmus vynalezl. Zajímavý je tím, že je
+        uvedl ve svém díle <i>Základy</i>, není dodnes zcela jasné, kdo tento algoritmus vynalezl. Zajímavý je tím, že
+        je
         zřejmě nejstarším netriviálním algoritmem v historii lidstva.
     </p>
-
     <p>
-        Algoritmus je určený pro nalezení největšího společného dělitele <b>(NSD)</b> dvou přirozených čísel. Dále se dá
-        také využít pro nalezení nejmenšího společného násobku <b>(nsn)</b> dvou přirozených čísel.
+        Algoritmus je určený pro nalezení <b>největšího společného dělitele (NSD)</b> dvou přirozených čísel. Dále se dá
+        také využít pro nalezení <b>nejmenšího společného násobku (nsn)</b> dvou přirozených čísel.
     </p>
 
     <hr>
@@ -42,32 +42,35 @@
 
     <p>
         Můžeme si všimnout, že algoritmus pracuje s původními čísli a na konci programu nejsou tato čísla zachována.
-        Algoritmus
-        funguje tak, že dokud se původní proměnné nerovnají, odčítá menší hodnotu od větší. Jeho práci si můžeme
-        představit následovně:
+        Algoritmus funguje tak, že dokud se původní proměnné nerovnají, odčítá menší hodnotu od větší. Jeho práci si
+        můžeme představit následovně:
     </p>
     <ol>
         <li>
             Na vstupu máme <b>dvě čísla - 120 a 75</b>
         </li>
+        <br>
         <li>
             V prvním cyklu je jasné, že se čísla nerovnají a tak vstupuje program do smyčky. Tedy vezme větší číslo
             <b>(120)</b> a od něj odečte menší <b>(75)</b>. Na konci prvního cyklu tak <b>zbydou čísla 45 a 75</b>.
         </li>
+        <br>
         <li>
             V druhém cyklu je provedena totožná operace. Zbydou tak <b>čísla 45 a 30</b>.
         </li>
+        <br>
         <li>
             Dále pokračuje program také stejně. Zbydou <b>čísla 15 a 30</b>.
         </li>
+        <br>
         <li>
             Poté zbydou <b>čísla 15 a 15</b>.
         </li>
+        <br>
         <li>
             Program zjistil, že čísla jsou stejná a tak vrátí <b>NSD čísel 120 a 75, tedy číslo 15</b>.
         </li>
     </ol>
-
     <p>
         Algoritmus výše je originální algoritmus tak, jak byl v Řecku popsán a využíván. V programování je však pro
         některá čísla také málo efektivní, a proto se využívá jeho obdoná implementace pomocí <b>operátoru modulo</b>.
@@ -77,18 +80,14 @@
         jejich NSD je číslo 1. Proto se využívá algoritmus fungující právě na bázi zbytku po dělení, který si
         ukážeme v zápětí.
     </p>
-
     <img src="../../../../../img/eukleiduvAlgoritmusModulo.png"
          alt="Eukleidův algoritmus s modulem" width="auto" height="400"/>
-
     <p>
         Jakožto nejelegantnější řešení nalezení NSD je pomocí modula a rekurze zároveň. Následující algoritmus je
-        principem stejný jako předchozí, ale je o mnoho kratší a nevyužívá pomocnou proměnnou <b>c</b>.
+        principem stejný jako předchozí, ale je o mnoho kratší a nevyužívá pomocnou <b>proměnnou c</b>.
     </p>
-
     <img src="../../../../../img/eukleiduvAlgoritmusModuloRekurzivni.png"
          alt="Eukleidův algoritmus s modulem a rekurzí" width="auto" height="300"/>
-
     <p>
         Nyní si ukážeme jak takovýto algoritmus funguje:
     </p>
@@ -96,13 +95,16 @@
         <li>
             Na vstupu jsou <b>čísla 1000 a 3</b>
         </li>
+        <br>
         <li>
             V prvním cyklu podmínka neplatí a tak se zavolá totožná metoda s upravenými vstupními hodnotami, jimiž jsou
             čísla <b>3 a 1</b>
         </li>
+        <br>
         <li>
             V dalším cyklu také podmínka neplatí a tak se znovu metoda zavolá tentokrát s <b>čísly 1 a 0</b>
         </li>
+        <br>
         <li>
             Protože podmínka tentokrát platí vrátí se <b>číslo 1 jakožto NSD čísel 1000 a 3</b>.
         </li>

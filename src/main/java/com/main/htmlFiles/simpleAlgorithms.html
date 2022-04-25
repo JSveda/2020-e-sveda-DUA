@@ -19,10 +19,10 @@
     <h3><u>Vypsání násobků čísla do určitého intervalu</u></h3>
 
     <p>
-        První podkapitolou jednoduchých algortmů jsou algoritmy spojené s dělitelností čísel. Jakožto první problém
-        budeme vytvořením metody řešit algoritmus, který má vypsat všechny násobky zadaného čísla od nuly do zadaného
+        První podkapitolou jednoduchých algortmů jsou algoritmy spojené s dělitelností čísel. Jakožto první úlohu
+        budeme řešit algoritmus, který má vypsat všechny násobky zadaného čísla od nuly do zadaného
         intervalu. Pro zjednodušení budeme předpokládat, že tyto udáje budou zadané v hlavičce této metody a číslo,
-        jehož násobky chceme najít, nebude záporné, nula nebo jedna a konečný interval také a zároveň bude větší nebo
+        jehož násobky chceme najít, nebude záporné, nula nebo jedna a konečný interval taktéž. Zároveň bude větší nebo
         roven zadanému číslu <i>tzn. vstupní čísla mohou být <b>číslo: 20</b>, <b>konečný interval: 100</b>. Program tak
         vypíše <b>20</b>, <b>40</b>, <b>60</b>, <b>80</b>, <b>100</b>.</i>
     </p>
@@ -34,8 +34,8 @@
 
     <p>
         Takovéto řešení není příliš efektvní!
-    <h3>Proč?</h3>
     </p>
+    <h3>Proč?</h3>
     <p>
         Algoritmus prochází všechna čísla od 1 až do konce intervalu a testuje, zda aktuální číslo vyhovuje zadání. To
         však není potřeba, neboť testujeme čísla, která nikdy násobky být nemůžou, což dokážeme vyvodit ze zadání. Není
@@ -48,7 +48,8 @@
          alt="Algoritmus nasobky z intervalu" width="auto" height="300"/>
     <p>
         Druhé řešení je o mnoho lepší, protože při tomto řešení nevhodná čísla netestujeme a pouze zvětšujeme počítadlo
-        o další násobek do doby, než překročíme konečný interval. Vždy co najdeme nový násobek patřící do intervalu, tak
+        o další násobek do doby, než překročíme konečný interval. Vždy, když najdeme nový násobek patřící do intervalu,
+        tak
         ho vypíšeme.
     </p>
 
@@ -57,68 +58,62 @@
     <h3><u>Nalezení čísla v poli</u></h3>
 
     <p>
-        První příkladem na algorimy pro práci s polem může být například takovéto zadání. Nalezněte a vraťte index
+        Prvním příkladem na algorimy pro práci s polem může být například takovéto zadání. Nalezněte a vraťte index
         hledaného čísla v zadaném poli celých čísel. Pokud se v poli hledané číslo nevyskytuje, program vrátí -1. <i>Tzn.
-        pokud bedeme mít zadané pole <b>[1 ,2 , 5, 6, 8, 10, -2, 4, 1]</b> a budeme hledat číslo <b>5</b>, program vrátí
+        pokud bedeme mít zadané pole <b>[1 ,2 , 5, 6, 8, 10, -2, 4, 1]</b> a budeme hledat <b> číslo 5</b>, program
+        vrátí
         <b>2</b></i>
     </p>
-
-    <p>Zde je první zcela primitivní řešení tohoto problému:</p>
-
+    <p>
+        Zde je první zcela primitivní řešení tohoto problému:
+    </p>
     <img src="../../../../../img/najdiVPoli.png"
          alt="Algoritmus najdi v poli" width="auto" height="400"/>
 
     <p>
-        Takovéto řešení je zcela funkční, přesto nefektivní. Když totiž budeme mít pole dělky např. 1000 a hledané číslu
+        Takovéto řešení je zcela funkční, přesto nefektivní. Když totiž budeme mít pole délky např. 1000 a hledané číslo
         bude hned na prvním indexu, pak program bude procházet i všechna ostatní čísla, přestože jsme již našli
         výsledek.
     </p>
-
     <p>
         Lepším řešením bude toto:
     </p>
-
     <img src="../../../../../img/najdiVPoliLepe.png"
          alt="Algoritmus najdi v poli" width="auto" height="400"/>
 
     <hr>
     <h2><b>VELIKOSTI PROMĚNNÝCH</b></h2>
     <h3><u>Vrácení největšího čísla</u></h3>
-
     <p>
-        Nyní napíšeme program, který bude mít na vstupu 4 celočíselné proměnné a vrátí největší v nich. <i>Tzn. pokud
+        Nyní napíšeme program, který bude mít na vstupu 4 celočíselné proměnné a vrátí největší z nich. <i>Tzn. pokud
         budou na vstupu čísla <b>3</b>, <b>7</b>, <b>7</b>, <b>10</b>, pak program vrátí <b>7</b></i>
     </p>
-
     <img src="../../../../../img/nejvetsiCislo.png"
          alt="Algoritmus nalezení největšího čísla" width="auto" height="400"/>
-
     <p>
         Takovýto algoritmus není ideální. Kontroluje totiž veliost proměnných, kterou již z předchozích porovnání známe.
+        <br>
         <i>
             Např. v první podmínce se ptáme, zda je větší proměnná <b>a</b> než proměnná <b>b</b>. Pokud tato podmínka
             neplatí znamená to, že proměnná <b>b</b> musí být určitě větší než proměnná <b>a</b>. Druhou podmínku tak
             můžeme zkrátit a ušetřit si práci.
         </i>
     </p>
-
     <p>
         Lepší podoba takového algoritmu může být takováto:
     </p>
-
     <img src="../../../../../img/nejvetsiCisloLepe.png"
          alt="Algoritmus nalezení největšího čísla" width="auto" height="400"/>
 
     <h3><u>Kontrola, zda číslo patří do intervalu</u></h3>
-
     <p>
-        Jakožto další algoritmus si představíme takový, který vrátí true když číslo patří do zadaného intervalu, jinak
-        vrátí false.
+        Jakožto další algoritmus si představíme takový, který vrátí <b>true</b>, když číslo patří do zadaného intervalu,
+        jinak vrátí <b>false</b>.
+        <br>
         <i>
-            Vstupní číslo x patří do intervalu <b><-10; -5)</b> nebo patří do intervalu <b><10;20></b>
+            Vstupní číslo <b>x</b> patří do intervalu <b><-10; -5)</b> nebo patří do intervalu <b><10;20></b>
         </i>
     </p>
-
     <p>
         Řešení této úlohy:
     </p>
@@ -126,43 +121,38 @@
          alt="Algoritmus zda patří do intervalu" width="auto" height="250"/>
 
     <h3><u>Kontrola, zda číslo nepatří do intervalu - úloha 1</u></h3>
-
     <p>
         Druhým příkladem na intervali bude velice podobná úloha. Znovu chceme zjistit, zda do určeného intervalu vstupní
         číslo patří.
+        <br>
         <i>
             Vstupní číslo x nepatří do intervalu <b><-10; -5)</b> ani do intervalu <b><10;20></b>
         </i>
     </p>
-
     <p>
         Řešení této úlohy:
     </p>
-
     <img src="../../../../../img/patriDoIntervalu_2.png"
          alt="Algoritmus zda nepatří do intervalu" width="auto" height="250"/>
 
     <h3><u>Kontrola, zda číslo nepatří do intervalu - úloha 2</u></h3>
-
     <p>
-        Dalším příkladem na intervalu je velice obdobná úloha předchozí. Vrátíme <b>true</b>, pokud podmínka platí či
+        Dalším příkladem na intervalu je velice obdobná úloha té předchozí. Vrátíme <b>true</b>, pokud podmínka platí či
         <b>false</b>, je-li to naopak.
+        <br>
         <i>
             Pokud zadané <b>číslo x</b> nepatří do intervalu <b><-10; 5)</b> nebo nepatří do intervalu <b><10;20></b>,
             pak podmínka platí. Program tedy vrací true.
         </i>
     </p>
-
     <p>
         Ukázkové řešení této úlohy:
     </p>
-
     <img src="../../../../../img/patriDoIntervalu_3.png"
          alt="Algoritmus zda nepatří do intervalu" width="auto" height="250"/>
-
     <p>
         Všimněme si rozdílu řešení této a předchozí úlohy. Každé řešení znamená něco jiného! Jedním z problému, se
-        kterými se programátoři při vytváření potýkají je právě problematika logických operátorů, jejichž podobnost je
+        kterými se programátoři při vytváření potýkají je právě <q>problematika</q> logických operátorů, jejichž podobnost je
         leckdy zavádějící.
     </p>
 

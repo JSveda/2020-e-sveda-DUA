@@ -18,7 +18,6 @@
                                 <Button fx:id="testButton" mnemonicParsing="false" onMouseClicked="#goToTestPage" text="Test" />
                                 <Button fx:id="mainMenuButton" mnemonicParsing="false" onMouseClicked="#goToMainMenu" text="Hlavní menu" />
                                 <Button fx:id="previousPageButton" mnemonicParsing="false" onMouseClicked="#goToPreviousPage" text="Předchozí stránka" />
-                                <Button fx:id="nextPageButton" mnemonicParsing="false" onMouseClicked="#goToNextPage" text="Následující stránka" />
                             </children>
                             <VBox.margin>
                                 <Insets />
