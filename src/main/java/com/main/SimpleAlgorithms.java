@@ -41,7 +41,7 @@ public class SimpleAlgorithms implements Initializable {
     @javafx.fxml.FXML
     public void goToPreviousPage(Event event) {
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("algorithmBasics.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(DUA.class.getResource("algorithmBasics.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
@@ -54,7 +54,7 @@ public class SimpleAlgorithms implements Initializable {
     @javafx.fxml.FXML
     public void goToNextPage(Event event) {
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("eukleidAlgorithm.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(DUA.class.getResource("eukleidAlgorithm.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
@@ -67,7 +67,7 @@ public class SimpleAlgorithms implements Initializable {
     @javafx.fxml.FXML
     public void goToMainMenu(Event event) {
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("mainMenu.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(DUA.class.getResource("mainMenu.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
@@ -80,7 +80,7 @@ public class SimpleAlgorithms implements Initializable {
     @javafx.fxml.FXML
     public void goToTestPage(Event event) {
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("simpleAlgorithmsTestPage.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(DUA.class.getResource("simpleAlgorithmsTestPage.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);

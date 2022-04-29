@@ -7,7 +7,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
@@ -40,7 +39,7 @@ public class PrimeNumbers implements Initializable {
     @javafx.fxml.FXML
     public void goToPreviousPage(Event event) {
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("eukleidAlgorithm.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(DUA.class.getResource("eukleidAlgorithm.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
@@ -53,7 +52,7 @@ public class PrimeNumbers implements Initializable {
     @javafx.fxml.FXML
     public void goToNextPage(Event event) {
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("arraySearching.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(DUA.class.getResource("arraySearching.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
@@ -66,7 +65,7 @@ public class PrimeNumbers implements Initializable {
     @javafx.fxml.FXML
     public void goToMainMenu(Event event) {
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("mainMenu.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(DUA.class.getResource("mainMenu.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
@@ -78,7 +77,7 @@ public class PrimeNumbers implements Initializable {
 
     public void goToTestPage(Event event) {
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("primeNumbersTestPage.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(DUA.class.getResource("primeNumbersTestPage.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);

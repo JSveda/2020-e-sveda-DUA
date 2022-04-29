@@ -41,7 +41,7 @@ public class AlgorithmBasics implements Initializable {
     @FXML
     public void goToNextPage(Event event) {
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("simpleAlgorithms.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(DUA.class.getResource("simpleAlgorithms.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
@@ -54,7 +54,7 @@ public class AlgorithmBasics implements Initializable {
     @FXML
     public void goToMainMenu(Event event) {
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("mainMenu.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(DUA.class.getResource("mainMenu.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);

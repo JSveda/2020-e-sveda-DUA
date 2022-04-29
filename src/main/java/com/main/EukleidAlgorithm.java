@@ -40,7 +40,7 @@ public class EukleidAlgorithm implements Initializable {
     @javafx.fxml.FXML
     public void goToPreviousPage(Event event) {
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("simpleAlgorithms.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(DUA.class.getResource("simpleAlgorithms.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
@@ -53,7 +53,7 @@ public class EukleidAlgorithm implements Initializable {
     @javafx.fxml.FXML
     public void goToNextPage(Event event) {
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("primeNumbers.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(DUA.class.getResource("primeNumbers.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
@@ -66,7 +66,7 @@ public class EukleidAlgorithm implements Initializable {
     @javafx.fxml.FXML
     public void goToMainMenu(Event event) {
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("mainMenu.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(DUA.class.getResource("mainMenu.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);

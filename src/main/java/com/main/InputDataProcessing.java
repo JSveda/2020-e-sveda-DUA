@@ -41,7 +41,7 @@ public class InputDataProcessing implements Initializable {
     @javafx.fxml.FXML
     public void goToPreviousPage(Event event) {
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("arraySearching.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(DUA.class.getResource("arraySearching.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
@@ -54,7 +54,7 @@ public class InputDataProcessing implements Initializable {
     @javafx.fxml.FXML
     public void goToNextPage(Event event) {
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("arrayDataProcessing.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(DUA.class.getResource("arrayDataProcessing.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
@@ -67,7 +67,7 @@ public class InputDataProcessing implements Initializable {
     @javafx.fxml.FXML
     public void goToMainMenu(Event event) {
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("mainMenu.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(DUA.class.getResource("mainMenu.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
@@ -80,7 +80,7 @@ public class InputDataProcessing implements Initializable {
     @javafx.fxml.FXML
     public void goToTestPage(Event event) {
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("inputDataProcessingTestPage.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(DUA.class.getResource("inputDataProcessingTestPage.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);

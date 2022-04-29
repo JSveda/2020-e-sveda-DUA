@@ -1,6 +1,5 @@
 package com.main;
 
-import com.main.tests.SecondBiggestNumberInArray;
 import com.main.tests.StepCounter;
 import com.main.tests.TestRunner;
 import com.main.tests.Testers;
@@ -67,7 +66,7 @@ public class ArraySearchingTestPage implements Initializable {
     @javafx.fxml.FXML
     public void goToMainMenu(Event event) {
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("mainMenu.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(DUA.class.getResource("mainMenu.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);

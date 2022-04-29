@@ -11,7 +11,6 @@ module com.example.dualgorithms {
     requires eu.hansolo.tilesfx;
     requires junit;
     requires java.compiler;
-    requires org.jetbrains.annotations;
     requires org.apache.commons.lang3;
 
     opens com.main to javafx.fxml;

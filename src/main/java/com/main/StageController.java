@@ -17,7 +17,7 @@ public class StageController {
 
     public void switchToMainMenu(ActionEvent e) {
         try {
-            currentRoot = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("mainMenu.fxml")));
+            currentRoot = FXMLLoader.load(Objects.requireNonNull(DUA.class.getResource("mainMenu.fxml")));
             currentStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             currentScene = new Scene(currentRoot);
             currentStage.setScene(currentScene);

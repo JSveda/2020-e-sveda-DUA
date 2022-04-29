@@ -19,7 +19,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.util.LinkedHashMap;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -208,7 +207,7 @@ public class MainMenuController implements Initializable {
 
     private void changeScene(Event event, String selectedItem) {
         try {
-            currentRoot = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource(objectReader.getLinkedHashMap().get(selectedItem))));
+            currentRoot = FXMLLoader.load(Objects.requireNonNull(DUA.class.getResource(objectReader.getLinkedHashMap().get(selectedItem))));
             currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             currentScene = new Scene(currentRoot);
             currentStage.setScene(currentScene);
